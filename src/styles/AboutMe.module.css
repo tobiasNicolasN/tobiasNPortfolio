@@ -1,0 +1,50 @@
+.container{
+    width: 90vw;
+    margin-top: 4.5rem;
+}
+
+.sectionName{
+    font-size: 1.2rem;
+    color: #666666;
+}
+
+.skills{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #666666;
+}
+
+.slogan{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: #333333;
+}
+
+.text {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333333;
+}
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.skillIcon {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border: 2px solid #666666; /* Color del borde */
+    border-radius: 5px;
+    background-color: #333333; /* Color de fondo */
+    padding: 10px; /* Espacio interno para las imágenes */
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
