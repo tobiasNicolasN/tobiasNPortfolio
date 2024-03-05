@@ -6,13 +6,13 @@ import Intro from "./components/Intro";
 
 function App() {
   const [language, setLanguage] = useState("es");
-  const [activeSection, setActiveSection] = useState('');
+  const [_activeSection, setActiveSection] = useState('');
 
   const handleSectionChange = (sectionId: string) => {
     setActiveSection(sectionId);
     scrollToSection(sectionId);
   };
-
+  
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
