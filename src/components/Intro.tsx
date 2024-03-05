@@ -2,16 +2,19 @@ import style from "../styles/Intro.module.css";
 import { IoIosArrowDropdown } from "react-icons/io";
 import Sidebar from "./SideBar";
 
-
 interface Props {
   language: string;
   setLanguage: React.Dispatch<React.SetStateAction<string>>;
-  scrollToAbout: () => void
-  scrollToProjects: () => void
-
+  scrollToAbout: () => void;
+  scrollToProjects: () => void;
 }
 
-function Intro({ language, setLanguage, scrollToAbout, scrollToProjects }: Props) {
+function Intro({
+  language,
+  setLanguage,
+  scrollToAbout,
+  scrollToProjects,
+}: Props) {
   const handleLanguage = () => {
     language === "es" ? setLanguage("en") : setLanguage("es");
   };
@@ -22,8 +25,7 @@ function Intro({ language, setLanguage, scrollToAbout, scrollToProjects }: Props
         <div className={style.container}>
           <div className={style.textContainer}>
             <h1 className={style.text}>
-              ¡Hola! Soy{" "}
-              <span className={style.textHighlighted}>Tobias</span>.
+              ¡Hola! Soy <span className={style.textHighlighted}>Tobias</span>.
             </h1>
             <h1 className={style.text}>
               Un apasionado{" "}
@@ -37,23 +39,24 @@ function Intro({ language, setLanguage, scrollToAbout, scrollToProjects }: Props
             <button className={style.button} onClick={() => handleLanguage()}>
               Change to english
             </button>
-            <a className={style.button} onClick={scrollToProjects}>Ver mis proyectos</a>
+            <button className={style.button} onClick={scrollToProjects}>
+              Ver mis proyectos
+            </button>
           </div>
-          <a onClick={scrollToAbout}  className={style.scrollDown}><IoIosArrowDropdown/></a>
-          <Sidebar/>
+          <a onClick={scrollToAbout} className={style.scrollDown}>
+            <IoIosArrowDropdown />
+          </a>
+          <Sidebar />
         </div>
       ) : (
         <div className={style.container}>
           <div className={style.textContainer}>
             <h1 className={style.text}>
-              Hello! I'm{" "}
-              <span className={style.textHighlighted}>Tobias</span>.
+              Hello! I'm <span className={style.textHighlighted}>Tobias</span>.
             </h1>
             <h1 className={style.text}>
               A passionate{" "}
-              <span className={style.textHighlighted}>
-                FullStack Developer
-              </span>
+              <span className={style.textHighlighted}>FullStack Developer</span>
               .
             </h1>
           </div>
@@ -61,11 +64,15 @@ function Intro({ language, setLanguage, scrollToAbout, scrollToProjects }: Props
             <button className={style.button} onClick={() => handleLanguage()}>
               Cambiar a español
             </button>
-            <a className={style.button} onClick={scrollToProjects}>Check my projects</a>
+            <button className={style.button} onClick={scrollToProjects}>
+              Check my projects
+            </button>
           </div>
-          <a onClick={scrollToAbout}  className={style.scrollDown}><IoIosArrowDropdown/></a>
-          <Sidebar/>
-          </div>
+          <a onClick={scrollToAbout} className={style.scrollDown}>
+            <IoIosArrowDropdown />
+          </a>
+          <Sidebar />
+        </div>
       )}
     </>
   );
