@@ -1,11 +1,17 @@
 import style from "../styles/Intro.module.css";
+import { IoIosArrowDropdown } from "react-icons/io";
+import Sidebar from "./SideBar";
+
 
 interface Props {
   language: string;
   setLanguage: React.Dispatch<React.SetStateAction<string>>;
+  scrollToAbout: () => void
+  scrollToProjects: () => void
+
 }
 
-function Intro({ language, setLanguage }: Props) {
+function Intro({ language, setLanguage, scrollToAbout, scrollToProjects }: Props) {
   const handleLanguage = () => {
     language === "es" ? setLanguage("en") : setLanguage("es");
   };
@@ -31,8 +37,10 @@ function Intro({ language, setLanguage }: Props) {
             <button className={style.button} onClick={() => handleLanguage()}>
               Change to english
             </button>
-            <a className={style.button} href="#projects">Ver mis proyectos</a>
+            <a className={style.button} onClick={scrollToProjects}>Ver mis proyectos</a>
           </div>
+          <a onClick={scrollToAbout}  className={style.scrollDown}><IoIosArrowDropdown/></a>
+          <Sidebar/>
         </div>
       ) : (
         <div className={style.container}>
@@ -53,9 +61,11 @@ function Intro({ language, setLanguage }: Props) {
             <button className={style.button} onClick={() => handleLanguage()}>
               Cambiar a español
             </button>
-            <button className={style.button}>Check my projects</button>
+            <a className={style.button} onClick={scrollToProjects}>Check my projects</a>
           </div>
-        </div>
+          <a onClick={scrollToAbout}  className={style.scrollDown}><IoIosArrowDropdown/></a>
+          <Sidebar/>
+          </div>
       )}
     </>
   );

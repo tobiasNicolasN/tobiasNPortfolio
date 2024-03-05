@@ -14,11 +14,12 @@
 .text{
     font-size: 1.5rem;
     font-weight: 500;
-    color: #666666;
+    color: white;
 }
 
 .textHighlighted{
-    color: #333333;
+  font-size: 1.6rem;
+    color: #FFA500;
 }
 
 .buttons{
@@ -31,10 +32,11 @@
     text-decoration: none;
     padding: 3px 10px;
     background: transparent;
-    color: #535353;
-    border: solid 1px #535353;
+    color: white;
+    border: solid 1px white;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -44,3 +46,61 @@
     color: #FFA500;
     border: solid 1px #FFA500;
 }
+
+.scrollDown {
+    opacity: 1;
+    -webkit-transition: all .5s ease-in 3s;
+    transition: all .5s ease-in 3s;
+  }
+  
+  .scrollDown {
+    position: absolute;
+    font-size: 2.5rem;
+    color: white;
+    bottom: 1rem;
+    left: 47.25%;
+    display: block;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    transform: scale(1)
+}
+
+  
+  .scrollDown:before {
+      position: absolute;
+      top: calc(50% - 8px);
+      left: calc(50% - 6px);
+      display: block;
+      width: 12px;
+      height: 12px;
+  }
+
+  .scrollDown:hover{
+    transition: 1s;
+    cursor: pointer;
+    color: #FFA500;
+  }
+  
+  @keyframes bounce {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    60% {
+      -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+  }

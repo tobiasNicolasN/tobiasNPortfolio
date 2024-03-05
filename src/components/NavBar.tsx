@@ -4,10 +4,13 @@ import { IoMenu, IoCloseSharp } from "react-icons/io5";
 
 interface Props {
   language: string;
-  onSectionChange: (sectionId: string) => void;
+  scrollToAbout: () => void
+  scrollToProjects: () => void
+  scrollToContact: () => void
+
 }
 
-function NavBar({ language, onSectionChange }: Props) {
+function NavBar({ language, scrollToAbout, scrollToContact, scrollToProjects }: Props) {
   const [showMenu, setShowMenu] = useState(false);
   
   const handleMenu = () => {
@@ -15,10 +18,9 @@ function NavBar({ language, onSectionChange }: Props) {
     document.body.style.overflow = showMenu ? "auto" : "hidden";
   };
 
-  const handleMenuItemClick = (sectionId: string) => {
+  const handleMenuItemClick = () => {
     setShowMenu(false);
     document.body.style.overflow = "auto";
-    onSectionChange(sectionId);
   };
 
   return (
@@ -27,22 +29,22 @@ function NavBar({ language, onSectionChange }: Props) {
         <h1 className={style.name}>TobiasNicolasN.</h1>
         <ul className={style.nav}>
           <li>
-            <a className={style.navItem} href="#about" onClick={() => handleMenuItemClick("about")}>
+            <a className={style.navItem} onClick={() => {handleMenuItemClick(), scrollToAbout()}}>
               {language === "es" ? "Sobre mi" : "About me"}
             </a>
           </li>
           <li>
-            <a className={style.navItem} href="#projects" onClick={() => handleMenuItemClick("projects")}>
+            <a className={style.navItem} onClick={() => {handleMenuItemClick(), scrollToProjects()}}>
               {language === "es" ? "Proyectos" : "Projects"}
             </a>
           </li>
           <li>
-            <a className={style.navItem} href="#contact" onClick={() => handleMenuItemClick("contact")}>
+            <a className={style.navItem} onClick={() => {handleMenuItemClick(), scrollToContact()}}>
               {language === "es" ? "Contacto" : "Contact"}
             </a>
           </li>
         </ul>
-        <a className={style.menuButton} href="#">
+        <a className={style.menuButton}>
           <IoMenu onClick={() => handleMenu()} />
         </a>
 
@@ -52,17 +54,17 @@ function NavBar({ language, onSectionChange }: Props) {
               <IoCloseSharp />
             </a>
             <li>
-              <a className={style.navMenuItem} href="#about" onClick={() => handleMenuItemClick("about")}>
+              <a className={style.navMenuItem} onClick={() => {handleMenuItemClick(), scrollToAbout()}}>
                 {language === "es" ? "Sobre mi" : "About me"}
               </a>
             </li>
             <li>
-              <a className={style.navMenuItem} href="#projects" onClick={() => handleMenuItemClick("projects")}>
+              <a className={style.navMenuItem} onClick={() => {handleMenuItemClick(), scrollToProjects()}}>
                 {language === "es" ? "Proyectos" : "Projects"}
               </a>
             </li>
             <li>
-              <a className={style.navMenuItem} href="#contact" onClick={() => handleMenuItemClick("contact")}>
+              <a className={style.navMenuItem} onClick={() => {handleMenuItemClick(), scrollToContact()}}>
                 {language === "es" ? "Contacto" : "Contact"}
               </a>
             </li>

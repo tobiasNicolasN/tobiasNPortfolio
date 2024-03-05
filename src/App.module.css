@@ -1,9 +1,17 @@
-.section{
+.section1{
     height: 100vh;
     display: flex;
     justify-content: center;
 }
 
-.prueba{
+.section{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.sectionName{
     margin-top: 4rem;
+    font-size: 3.5rem;
+    color: #666666;
 }

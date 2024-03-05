@@ -35,7 +35,7 @@ function AboutMe({ language }: Props) {
           <div>
             <h1 className={style.skills}>HABILIDADES</h1>
             <div className={style.skillsContainer}>
-              <img src={tsImg} className={style.skillIcon} />
+              {/* <img src={tsImg} className={style.skillIcon} />
               <img src={jsImg} className={style.skillIcon} />
               <img src={reactImg} className={style.skillIcon} />
               <img src={htmlImg} className={style.skillIcon} />
@@ -43,7 +43,16 @@ function AboutMe({ language }: Props) {
               <img src={tailwindImg} className={style.skillIcon} />
               <img src={nodeImg} className={style.skillIcon} />
               <img src={mongoImg} className={style.skillIcon} />
-              <img src={expressImg} className={style.skillIcon} />
+              <img src={expressImg} className={style.skillIcon} /> */}
+              <div className={style.skill}>TypeScript</div>
+              <div className={style.skill}>JavaScript</div>
+              <div className={style.skill}>React</div>
+              <div className={style.skill}>Html</div>
+              <div className={style.skill}>Css</div>
+              <div className={style.skill}>TailWind</div>
+              <div className={style.skill}>Node.js</div>
+              <div className={style.skill}>Express</div>
+              <div className={style.skill}>MongoDB</div>
             </div>
           </div>
         </div>
@@ -66,7 +75,7 @@ function AboutMe({ language }: Props) {
           <div>
             <h1 className={style.skills}>SKILLS</h1>
             <div className={style.skillsContainer}>
-              <img src={tsImg} className={style.skillIcon} />
+              {/* <img src={tsImg} className={style.skillIcon} />
               <img src={jsImg} className={style.skillIcon} />
               <img src={reactImg} className={style.skillIcon} />
               <img src={htmlImg} className={style.skillIcon} />
@@ -74,7 +83,16 @@ function AboutMe({ language }: Props) {
               <img src={tailwindImg} className={style.skillIcon} />
               <img src={nodeImg} className={style.skillIcon} />
               <img src={mongoImg} className={style.skillIcon} />
-              <img src={expressImg} className={style.skillIcon} />
+              <img src={expressImg} className={style.skillIcon} /> */}
+              <div className={style.skill}>TypeScript</div>
+              <div className={style.skill}>JavaScript</div>
+              <div className={style.skill}>React</div>
+              <div className={style.skill}>Html</div>
+              <div className={style.skill}>Css</div>
+              <div className={style.skill}>TailWind</div>
+              <div className={style.skill}>Node.js</div>
+              <div className={style.skill}>Express</div>
+              <div className={style.skill}>MongoDB</div>
             </div>
           </div>
         </div>
