@@ -13,7 +13,7 @@ const Sidebar = () => {
       <div className={style.icon} onClick={() => openURL("https://github.com/tobiasNicolasN")}>
         <FaGithub/>
       </div>
-      <div className={style.icon}>
+      <div className={style.icon} onClick={() => openURL("https://www.linkedin.com/in/tobiasnicolasn/")}>
         <FaLinkedin/>
     </div>
     </div>
