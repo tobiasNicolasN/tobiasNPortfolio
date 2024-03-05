@@ -28,6 +28,7 @@
 }
 
 .button{
+    text-decoration: none;
     padding: 3px 10px;
     background: transparent;
     color: #535353;
@@ -43,4 +44,3 @@
     color: #FFA500;
     border: solid 1px #FFA500;
 }
-

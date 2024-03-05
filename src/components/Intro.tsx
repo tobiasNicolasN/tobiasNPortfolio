@@ -31,7 +31,7 @@ function Intro({ language, setLanguage }: Props) {
             <button className={style.button} onClick={() => handleLanguage()}>
               Change to english
             </button>
-            <button className={style.button}>Ver mi trabajo</button>
+            <a className={style.button} href="#projects">Ver mis proyectos</a>
           </div>
         </div>
       ) : (
@@ -53,7 +53,7 @@ function Intro({ language, setLanguage }: Props) {
             <button className={style.button} onClick={() => handleLanguage()}>
               Cambiar a español
             </button>
-            <button className={style.button}>Check my work</button>
+            <button className={style.button}>Check my projects</button>
           </div>
         </div>
       )}
