@@ -1,106 +1,106 @@
 .container {
-    width: 80vw;
-    margin-top: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    text-align: left;
+  width: 80vw;
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
 }
 
-.textContainer{
-    align-self: flex-start;
+.textContainer {
+  align-self: flex-start;
 }
 
-.text{
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: white;
+.text {
+  font-size: clamp(1.5rem, 1.197rem + 1.127vw, 3rem);
+  font-weight: 500;
+  color: white;
 }
 
-.textHighlighted{
-  font-size: 1.6rem;
-    color: #FFA500;
+.textHighlighted {
+  font-size: clamp(1.6rem, 1.297rem + 1.127vw, 3.1rem);
+  color: #ffa500;
 }
 
-.buttons{
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.5rem;
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
-.button{
-    text-decoration: none;
-    padding: 3px 10px;
-    background: transparent;
-    color: white;
-    border: solid 1px white;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
+.button {
+  text-decoration: none;
+  padding: 3px 10px;
+  background: transparent;
+  color: white;
+  border: solid 1px white;
+  border-radius: 5px;
+  font-size: clamp(0.8rem, 0.649rem + 0.563vw, 1.55rem);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.button:hover{
-    transition: 1s ;
-    cursor: pointer;
-    color: #FFA500;
-    border: solid 1px #FFA500;
+.button:hover {
+  transition: 1s;
+  cursor: pointer;
+  color: #ffa500;
+  border: solid 1px #ffa500;
 }
 
 .scrollDown {
-    opacity: 1;
-    -webkit-transition: all .5s ease-in 3s;
-    transition: all .5s ease-in 3s;
-  }
-  
-  .scrollDown {
-    position: absolute;
-    font-size: 2.5rem;
-    color: white;
-    bottom: 1rem;
-    left: 47.25%;
-    display: block;
-    -webkit-animation: bounce 2s infinite 2s;
-    animation: bounce 2s infinite 2s;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    transform: scale(1)
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in 3s;
+  transition: all 0.5s ease-in 3s;
 }
 
-  
-  .scrollDown:before {
-      position: absolute;
-      top: calc(50% - 8px);
-      left: calc(50% - 6px);
-      display: block;
-      width: 12px;
-      height: 12px;
-  }
+.scrollContainer {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-  .scrollDown:hover{
-    transition: 1s;
-    cursor: pointer;
-    color: #FFA500;
+.scrollDown {
+  font-size: clamp(2.5rem, 1.995rem + 1.878vw, 5rem);
+  color: white;
+  display: block;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  transform: scale(1);
+}
+
+.scrollDown:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+}
+
+.scrollDown:hover {
+  transition: 1s;
+  cursor: pointer;
+  color: #ffa500;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
-  
-  @keyframes bounce {
-    0%,
-    100%,
-    20%,
-    50%,
-    80% {
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -webkit-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
-    }
-    60% {
-      -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
-      transform: translateY(-5px);
-    }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
   }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}

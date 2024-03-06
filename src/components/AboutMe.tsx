@@ -64,27 +64,18 @@ function AboutMe({ language }: Props) {
               continuously.
             </h1>
           </div>
-          <div>
-            <h1 className={style.skills}>SKILLS</h1>
+          <div className={style.container}>
+            <h1 className={style.skills}>Skills</h1>
             <div className={style.skillsContainer}>
-              {/* <img src={tsImg} className={style.skillIcon} />
-              <img src={jsImg} className={style.skillIcon} />
-              <img src={reactImg} className={style.skillIcon} />
-              <img src={htmlImg} className={style.skillIcon} />
-              <img src={cssImg} className={style.skillIcon} />
-              <img src={tailwindImg} className={style.skillIcon} />
-              <img src={nodeImg} className={style.skillIcon} />
-              <img src={mongoImg} className={style.skillIcon} />
-              <img src={expressImg} className={style.skillIcon} /> */}
-              <div className={style.skill}>TypeScript</div>
-              <div className={style.skill}>JavaScript</div>
-              <div className={style.skill}>React</div>
-              <div className={style.skill}>Html</div>
-              <div className={style.skill}>Css</div>
-              <div className={style.skill}>TailWind</div>
-              <div className={style.skill}>Node.js</div>
-              <div className={style.skill}>Express</div>
-              <div className={style.skill}>MongoDB</div>
+              <SkillCard technology="TypeScript" img={tsImg}/>
+              <SkillCard technology="JavaScript" img={jsImg}/>
+              <SkillCard technology="React" img={reactImg}/>
+              <SkillCard technology="HTML5" img={htmlImg}/>
+              <SkillCard technology="CSS3" img={cssImg}/>
+              <SkillCard technology="Tailwind" img={tailwindImg}/>
+              <SkillCard technology="Node.js" img={nodeImg}/>
+              <SkillCard technology="Express" img={expressImg}/>
+              <SkillCard technology="MongoDB" img={mongoImg}/>
             </div>
           </div>
         </div>

@@ -31,9 +31,12 @@
 .skillsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     width: 100%;
     margin-top: 2rem;
+    grid-auto-flow: dense;
 }
 
 /* 

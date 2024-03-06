@@ -43,9 +43,11 @@ function Intro({
               Ver mis proyectos
             </button>
           </div>
-          <a onClick={scrollToAbout} className={style.scrollDown}>
-            <IoIosArrowDropdown />
-          </a>
+          <div className={style.scrollContainer}>
+            <a onClick={scrollToAbout} className={style.scrollDown}>
+              <IoIosArrowDropdown />
+            </a>
+          </div>
           <Sidebar />
         </div>
       ) : (
