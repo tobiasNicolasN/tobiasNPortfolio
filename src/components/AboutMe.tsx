@@ -1,13 +1,14 @@
 import style from "../styles/AboutMe.module.css";
-// import cssImg from "../icons/CSS3.png";
-// import expressImg from "../icons/Express.png";
-// import htmlImg from "../icons/HTML5.png";
-// import jsImg from "../icons/JavaScript.png";
-// import mongoImg from "../icons/MongoDB.png";
-// import nodeImg from "../icons/Node.js.png";
-// import reactImg from "../icons/React.png";
-// import tailwindImg from "../icons/Tailwind CSS.png";
-// import tsImg from "../icons/TypeScript.png";
+import cssImg from "../icons/CSS3.png";
+import SkillCard from "./SkillCard";
+import expressImg from "../icons/Express.png";
+import htmlImg from "../icons/HTML5.png";
+import jsImg from "../icons/JavaScript.png";
+import mongoImg from "../icons/MongoDB.png";
+import nodeImg from "../icons/Node.js.png";
+import reactImg from "../icons/React.png";
+import tailwindImg from "../icons/Tailwind CSS.png";
+import tsImg from "../icons/TypeScript.png";
 
 interface Props {
   language: string;
@@ -32,27 +33,18 @@ function AboutMe({ language }: Props) {
               en inglés para mejorar cada día.
             </h1>
           </div>
-          <div>
+          <div className={style.container}>
             <h1 className={style.skills}>HABILIDADES</h1>
             <div className={style.skillsContainer}>
-              {/* <img src={tsImg} className={style.skillIcon} />
-              <img src={jsImg} className={style.skillIcon} />
-              <img src={reactImg} className={style.skillIcon} />
-              <img src={htmlImg} className={style.skillIcon} />
-              <img src={cssImg} className={style.skillIcon} />
-              <img src={tailwindImg} className={style.skillIcon} />
-              <img src={nodeImg} className={style.skillIcon} />
-              <img src={mongoImg} className={style.skillIcon} />
-              <img src={expressImg} className={style.skillIcon} /> */}
-              <div className={style.skill}>TypeScript</div>
-              <div className={style.skill}>JavaScript</div>
-              <div className={style.skill}>React</div>
-              <div className={style.skill}>Html</div>
-              <div className={style.skill}>Css</div>
-              <div className={style.skill}>TailWind</div>
-              <div className={style.skill}>Node.js</div>
-              <div className={style.skill}>Express</div>
-              <div className={style.skill}>MongoDB</div>
+              <SkillCard technology="TypeScript" img={tsImg}/>
+              <SkillCard technology="JavaScript" img={jsImg}/>
+              <SkillCard technology="React" img={reactImg}/>
+              <SkillCard technology="HTML5" img={htmlImg}/>
+              <SkillCard technology="CSS3" img={cssImg}/>
+              <SkillCard technology="Tailwind" img={tailwindImg}/>
+              <SkillCard technology="Node.js" img={nodeImg}/>
+              <SkillCard technology="Express" img={expressImg}/>
+              <SkillCard technology="MongoDB" img={mongoImg}/>
             </div>
           </div>
         </div>

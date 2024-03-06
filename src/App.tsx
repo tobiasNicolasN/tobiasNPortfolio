@@ -30,8 +30,7 @@ function App() {
           scrollToProjects={() => scrollToSection("projects")}
         />
       </section>
-      <section className={style.section} id="about">
-        {/* Contenido de la sección "Sobre mi" */}
+      <section className={style.section2} id="about">
         <AboutMe language={language} />
       </section>
       <section className={style.section1} id="projects">
