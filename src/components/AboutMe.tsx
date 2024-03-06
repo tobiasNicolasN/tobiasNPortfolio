@@ -1,14 +1,14 @@
 import style from "../styles/AboutMe.module.css";
-import cssImg from "../icons/CSS3.png";
+import cssImg from "../icons/CSS3.webp";
 import SkillCard from "./SkillCard";
-import expressImg from "../icons/Express.png";
-import htmlImg from "../icons/HTML5.png";
-import jsImg from "../icons/JavaScript.png";
-import mongoImg from "../icons/MongoDB.png";
-import nodeImg from "../icons/Node.js.png";
-import reactImg from "../icons/React.png";
-import tailwindImg from "../icons/Tailwind CSS.png";
-import tsImg from "../icons/TypeScript.png";
+import expressImg from "../icons/Express.webp";
+import htmlImg from "../icons/HTML5.webp";
+import jsImg from "../icons/JavaScript.webp";
+import mongoImg from "../icons/MongoDB.webp";
+import nodeImg from "../icons/Node.js.webp";
+import reactImg from "../icons/React.webp";
+import tailwindImg from "../icons/Tailwind CSS.webp";
+import tsImg from "../icons/TypeScript.webp";
 
 interface Props {
   language: string;

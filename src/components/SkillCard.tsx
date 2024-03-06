@@ -9,7 +9,7 @@ function SkillCard({img, technology}: IProps) {
   return (
     <div className={style.container}>
         <div className={style.imgContainer}>
-            <img src={img}/>
+            <img alt='' src={img}/>
         </div>
         <h1 className={style.text}>{technology}</h1>
     </div>

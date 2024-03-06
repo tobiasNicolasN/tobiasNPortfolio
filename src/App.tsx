@@ -3,6 +3,7 @@ import style from "./App.module.css";
 import { useState } from "react";
 import AboutMe from "./components/AboutMe";
 import Intro from "./components/Intro";
+import Contact from "./components/Contact";
 
 function App() {
   const [language, setLanguage] = useState("es");
@@ -38,10 +39,8 @@ function App() {
           {language === "es" ? "PROYECTOS" : "PROJECTS"}
         </h1>
       </section>
-      <section className={style.section1} id="contact">
-        <h1 className={style.sectionName}>
-          {language === "es" ? "CONTACTO" : "CONTACT"}
-        </h1>
+      <section className={style.section4} id="contact">
+        <Contact language={language}/>
       </section>
     </>
   );
