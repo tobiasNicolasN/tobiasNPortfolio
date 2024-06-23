@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+body{
+  background: #16161a;
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,4 +34,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
+
+/* 
+bg #16161a;
+    --color-bg-offset: #29293e;
+    --color-text: #fffffe;
+    --color-text-offset: #94a1b2;
+    --color-border: #383a61;
+    --color-primary: #7f5af0;
+    --color-primary-offset: #e068fd;
+    --color-secondary: #2cb67d; */
