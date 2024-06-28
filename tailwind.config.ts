@@ -13,6 +13,11 @@ const config: Config = {
         "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
       ],
       mono: ["Noe Display", "Georgia", "Times", "serif"]
+    },
+    extend : {
+      colors: {
+       "second" : "#7f5af0"
+      }
     }
   },
   plugins: [],
