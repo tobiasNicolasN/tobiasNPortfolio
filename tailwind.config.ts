@@ -16,7 +16,10 @@ const config: Config = {
     },
     extend : {
       colors: {
-       "second" : "#7f5af0"
+       "second" : "#7f5af0",
+       "offset-second" : "#e068fd",
+       "button" : "#29293e",
+       "offset-button" : "#29293e"
       }
     }
   },

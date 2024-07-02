@@ -3,6 +3,7 @@
 import { useLang } from '@/context/LanguageContext';
 import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
+import Skills from '@/src/Skills';
 import Link from 'next/link';
 import { useEffect } from 'react';
 
@@ -15,14 +16,14 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div>
       <NavBar />
-      <div className="w-full flex flex-col items-center justify-center mb-20">
-        <main className="flex flex-col justify-center p-24 font-sans">
-          <div>
+      <div className="w-full h-96 flex flex-col items-center mt-20 mb-20">
+        <main className="flex flex-col justify-center font-sans">
+          <div className='mt-28'>
             <Link
               href="/about"
-              className="text-2xl font-sans text-second font-medium inline"
+              className="text-2xl font-sans text-second hover:text-offset-second duration-300 font-medium inline"
             >
               {lang
                 ? 'HOLA, MI NOMBRE ES TOBIAS NUÑEZ.'
@@ -39,9 +40,10 @@ export default function Home() {
               ? 'Argentino y entusiasta de la tecnología. Trabajo con TypeScript y me encanta explorar lo último en desarrollo web y móvil.'
               : 'Argentinian and a tech enthusiast. I work with TypeScript and love exploring the latest in web and mobile development.'}
           </h1>
+          <Skills/>
         </main>
       </div>
-      <Footer/>
-    </>
+      {/* <Footer/> */}
+    </div>
   );
 }
