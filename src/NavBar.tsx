@@ -3,6 +3,7 @@ import photoEs from '../public/images/spanish.png';
 import photoEn from '../public/images/english.png';
 import Image from 'next/image';
 import { useLang } from '@/context/LanguageContext';
+import Link from 'next/link';
 
 function NavBar() {
   const { language, setLanguage } = useLang();
@@ -13,7 +14,7 @@ function NavBar() {
   };
 
   return (
-    <div className="flex justify-between items-center p-14 mx-10 font-sans text-gray-200">
+    <div className="flex justify-between items-center mt-4 mx-10 font-sans text-gray-200">
       <div className="flex items-center gap-2">
         <div className="w-11 h-11 items-center relative">
           <Image
@@ -24,28 +25,31 @@ function NavBar() {
             fill={true}
           />
         </div>
-        <a href="/" className="text-xl font-medium">
+        <Link href="/" className="text-xl font-medium">
           Tobias Nuñez
-        </a>
+        </Link>
       </div>
 
       <ul className="flex items-center justify-center align-middle gap-4">
         <li>
-          <a href="/">
-            <span className="font-semibold">01</span> {lang ? 'inicio' : 'home'}
-          </a>
+          <Link className="group transition-all duration-300 ease-in-out" href="/">
+            <span className="bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-700 ease-out">
+              <span className='font-semibold'>01</span> {lang ? 'Inicio' : 'home'}
+            </span>
+          </Link>
         </li>
         <li>
-          <a href="/proyects">
-            <span className="font-semibold">02</span>{' '}
-            {lang ? 'proyectos' : 'projects'}
-          </a>
-        </li>
-        <li>
-          <a href="/about">
-            <span className="font-semibold">03</span>{' '}
-            {lang ? 'sobre mi' : 'about'}
-          </a>
+          <Link className="group transition-all duration-300 ease-in-out" href="/projects">
+            <span className="bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-700 ease-out">
+              <span className='font-semibold'>02</span> {lang ? 'proyectos' : 'projects'}
+            </span>
+          </Link>
+        </li><li>
+          <Link className="group transition-all duration-300 ease-in-out" href="/">
+            <span className="bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-700 ease-out">
+              <span className='font-semibold'>03</span> {lang ? 'sobre mi' : 'about me'}
+            </span>
+          </Link>
         </li>
         <li>
           <button
@@ -53,7 +57,7 @@ function NavBar() {
             onClick={() => changeLanguage()}
           >
             {language === 'spanish' ? (
-              <div className='w-7 h-7 relative'>
+              <div className="w-7 h-7 relative">
                 <Image
                   src={photoEn}
                   alt="Picture of the language"
@@ -63,7 +67,7 @@ function NavBar() {
                 />
               </div>
             ) : (
-              <div className='w-7 h-7 relative'>
+              <div className="w-7 h-7 relative">
                 <Image
                   src={photoEs}
                   alt="Picture of the language"
