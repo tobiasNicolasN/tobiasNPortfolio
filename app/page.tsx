@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <div className="w-full h-96 flex flex-col items-center mt-20 mb-20">
-        <main className="flex flex-col justify-center font-sans">
+      <div className="w-full flex flex-col items-center mt-20 mb-20">
+        <main className="flex w-8/12 flex-col justify-center font-sans">
           <div className='mt-28'>
             <Link
               href="/about"
