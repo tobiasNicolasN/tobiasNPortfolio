@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="font-sans text-gray-200 text-sm relative bottom-0">
+    <footer className="font-sans text-gray-200 text-base relative bottom-0">
         <hr className="border-gray-200 dark:border-gray-700" />
         <div className="sm:flex sm:items-center sm:justify-between pt-5 pb-5 px-10">
           <span className="">
