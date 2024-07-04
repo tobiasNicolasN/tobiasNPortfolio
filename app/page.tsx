@@ -18,9 +18,9 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <div className="w-full flex flex-col items-center mt-20 mb-20">
+      <div className="w-full flex flex-col items-center mt-40">
         <main className="flex w-7/12 flex-col justify-center font-sans">
-          <div className='mt-28 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in'>
+          <div className='animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in'>
             <Link
               href="/about"
               className="text-2xl font-sans text-second hover:text-offset-second duration-300 font-medium inline"
@@ -41,7 +41,6 @@ export default function Home() {
               : 'Argentinian and a tech enthusiast. I work with TypeScript and love exploring the latest in web and mobile development.'}
           </h1>
           <Skills/>
-          <h1 className='mt-20 text-2xl'>holaa</h1>
         </main>
       </div>
       <Footer/>

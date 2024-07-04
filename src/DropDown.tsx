@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import photoEs from '../public/images/spanish.png';
 import photoEn from '../public/images/english.png';
+import englishSVG from '../public/images/english.svg';
 import { useLang } from '@/context/LanguageContext';
 
 function DropDown() {
@@ -15,11 +16,12 @@ function DropDown() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  // Manejar el evento hover
+  // Abre el menu desplegable mediante un click
   const handleMouseClick = () => {
     setIsOpen(true);
   };
 
+  // Cierra el menu desplegable al dejar de estar en focus por el mouse
   const handleMouseLeave = () => {
       setIsOpen(false);
   };
