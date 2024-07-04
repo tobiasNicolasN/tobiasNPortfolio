@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import photoEs from '../public/images/spanish.png';
 import photoEn from '../public/images/english.png';
-import englishSVG from '../public/images/english.svg';
 import { useLang } from '@/context/LanguageContext';
 
 function DropDown() {
