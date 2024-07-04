@@ -1,11 +1,10 @@
-# Mi Portafolio
+# My Portfolio
 
-Bienvenido a mi portafolio personal. Este proyecto está desarrollado utilizando tecnologías modernas para asegurar una experiencia de usuario rápida y agradable.
+Welcome to my personal portfolio. This project is developed using modern technologies to ensure a fast and pleasant user experience.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **Next.js**: Un framework de React que permite la creación de aplicaciones web de alto rendimiento con renderizado del lado del servidor y generación estática.
-- **TypeScript**: Un superset de JavaScript que añade tipos estáticos, ayudando a detectar errores y mejorar la mantenibilidad del código.
-- **TailwindCSS**: Un framework de CSS utilitario que permite un diseño rápido y eficiente directamente en los archivos de componentes.
-- **TailwindCSS Animation**: Extensiones de TailwindCSS para animaciones que añaden transiciones suaves y efectos visuales atractivos.
-
+- **Next.js**: A React framework that enables the creation of high-performance web applications with server-side rendering and static generation.
+- **TypeScript**: A superset of JavaScript that adds static types, helping to catch errors and improve code maintainability.
+- **TailwindCSS**: A utility-first CSS framework that allows for quick and efficient design directly in the component files.
+- **TailwindCSS Animation**: Extensions of TailwindCSS for animations that add smooth transitions and attractive visual effects.
