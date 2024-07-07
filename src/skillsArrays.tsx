@@ -18,7 +18,6 @@ import actionsSVG from '../public/images/actions.svg';
 import dockerSVG from '../public/images/docker.svg';
 import graphqlSVG from '../public/images/graphql.svg';
 import jestSVG from '../public/images/jest.svg';
-import { ReactElement } from 'react';
 
 // Contiene el nombre de la habilidad y su respectiva svg
 export interface ISkills {

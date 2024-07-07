@@ -1,8 +1,7 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
-import photoEs from '../public/images/spanish.png';
-import photoEn from '../public/images/english.png';
+import SVGEnglish from '../public/images/english.svg';
+import SVGSpanish from '../public/images/spanish.svg';
 import { useLang } from '@/context/LanguageContext';
 
 function DropDown() {
@@ -22,7 +21,7 @@ function DropDown() {
 
   // Cierra el menu desplegable al dejar de estar en focus por el mouse
   const handleMouseLeave = () => {
-      setIsOpen(false);
+    setIsOpen(false);
   };
 
   return (
@@ -32,27 +31,13 @@ function DropDown() {
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="z-10 text-white duration-200 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  px-3 p-2 inline-flex items-center justify-center group"
+        className="z-10 text-white duration-200 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group"
         id="myButton"
       >
         <div className="w-8 relative mr-2" style={{ aspectRatio: '16/9' }}>
-          {lang ? (
-            <Image
-              src={photoEs}
-              alt="Spain flag"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              fill={true}
-            />
-          ) : (
-            <Image
-              src={photoEn}
-              alt="Uk flag"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              fill={true}
-            />
-          )}
+          {lang ? <SVGSpanish /> : <SVGEnglish />}
         </div>
-        ES
+        {lang ? 'ES' : 'EN'}
         <span className="group-hover:text-second duration-200">
           <svg
             className="w-3 h-3 ml-2"
@@ -80,28 +65,16 @@ function DropDown() {
           <ul className="py-2">
             <li>
               <button
-                onClick={() => {changeLanguage(), setIsOpen(false)}}
+                onClick={() => {
+                  changeLanguage(), setIsOpen(false);
+                }}
                 className="px-4 py-2 w-full hover:bg-gray-700 inline-flex items-center justify-center"
               >
                 <div
                   className="w-8 relative mr-2"
                   style={{ aspectRatio: '16/9' }}
                 >
-                  {lang ? (
-                    <Image
-                      src={photoEn}
-                      alt="UK FLAG"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      fill={true}
-                    />
-                  ) : (
-                    <Image
-                      src={photoEs}
-                      alt="SPAIN FLAG"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      fill={true}
-                    />
-                  )}
+                  {lang ? <SVGEnglish /> : <SVGSpanish />}
                 </div>{' '}
                 {lang ? 'EN' : 'ES'}
               </button>

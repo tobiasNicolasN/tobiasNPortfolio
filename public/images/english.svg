@@ -1,4 +1,4 @@
-<svg version="1.1" viewBox="0 0 2048 1024" width="1280" height="1280" xmlns="http://www.w3.org/2000/svg">
+<svg version="1.1" viewBox="0 0 2048 1024" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
 <path transform="translate(0)" d="m0 0h2048v1024h-2048z" fill="#C61330"/>
 <path transform="translate(2033,614)" d="m0 0h15v410h-921l-1-5v-403l1-1z" fill="#FEFEFE"/>
 <path transform="translate(1126)" d="m0 0h922v409h-921l-1-31z" fill="#FEFEFE"/>

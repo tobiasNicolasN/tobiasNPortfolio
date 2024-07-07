@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Tobias Nuñez',
   description: 'My portfolio',
-  icons: { icon: '/images/icon.png' },
+  icons: { icon: 'public/images/icon.png' },
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/icon.png" />
+        <link rel="icon" href="public/images/icon.png" />
       </head>
       <body className={inter.className}>
         <LangProvider>{children}</LangProvider>
