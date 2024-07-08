@@ -1,6 +1,7 @@
 'use client';
 
 import { useLang } from '@/context/LanguageContext';
+import Contact from '@/src/Contact';
 import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
 import Skills from '@/src/Skills';
@@ -40,7 +41,7 @@ export default function Home() {
               ? 'Argentino y entusiasta de la tecnología. Trabajo con TypeScript y me encanta explorar lo último en desarrollo web y móvil.'
               : 'Argentinian and a tech enthusiast. I work with TypeScript and love exploring the latest in web and mobile development.'}
           </h1>
-          <h1 className="text-xl tracking-tracking-wider mt-8 text-slate-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in ">
+          <h1 className="text-xl tracking-tracking-wider mt-8 text-slate-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             "
             {lang
               ? `Poner el alma, creatividad y amor en lo que haces, dejando una parte de vos siempre en tu trabajo.`
@@ -48,6 +49,7 @@ export default function Home() {
             "
           </h1>
           <Skills />
+          <Contact />
         </main>
       </div>
       <Footer />

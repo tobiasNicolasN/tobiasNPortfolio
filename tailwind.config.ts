@@ -19,7 +19,8 @@ const config: Config = {
        "second" : "#7f5af0",
        "offset-second" : "#e068fd",
        "button" : "#29293e",
-       "offset-button" : "#29293e"
+       "offset-button" : "#374151",
+       "bg" : "#16161a"
       }
     }
   },

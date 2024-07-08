@@ -26,12 +26,12 @@ function DropDown() {
 
   return (
     <div
-      className="relative inline-block mt-1 text-large text-center font-medium"
+      className="relative inline-block mt-1 text-large text-center font-medium text-gray-200"
       onClick={handleMouseClick}
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="z-10 text-white duration-200 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group"
+        className="z-10  duration-200 bg-button hover:ring-2 hover:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group"
         id="myButton"
       >
         <div className="w-8 relative mr-2" style={{ aspectRatio: '16/9' }}>
@@ -59,7 +59,7 @@ function DropDown() {
 
       {isOpen && (
         <div
-          className="absolute right-0 bg-offset-button rounded-b-lg shadow"
+          className="absolute right-0 bg-button rounded-b-lg shadow"
           style={{ width: document.getElementById('myButton')?.offsetWidth }}
         >
           <ul className="py-2">

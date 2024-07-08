@@ -34,7 +34,7 @@ function Skills() {
   ];
 
   return (
-    <div className="flex flex-col w-full h-96 items-left mt-40 mb-40 font-sans text-white">
+    <div className="flex flex-col w-full h-96 items-left mt-40 mb-40 font-sans text-gray-200">
       <h1 className="text-4xl font-mono font-medium">
         {lang ? 'HABILIDADES' : 'SKILLS'}
       </h1>
