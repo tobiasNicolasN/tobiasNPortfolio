@@ -8,6 +8,7 @@ import {
   skillsTools,
 } from './skillsArrays';
 import { useLang } from '@/context/LanguageContext';
+import { Element } from 'react-scroll';
 
 function Skills() {
   const { language } = useLang();
@@ -34,7 +35,7 @@ function Skills() {
   ];
 
   return (
-    <div className="flex flex-col w-full h-96 items-left mt-40 mb-40 font-sans text-gray-200">
+    <Element name='skills' className="flex flex-col w-full h-96 items-left mt-40 mb-40 font-sans text-gray-200">
       <h1 className="text-4xl font-mono font-medium">
         {lang ? 'HABILIDADES' : 'SKILLS'}
       </h1>
@@ -90,7 +91,7 @@ function Skills() {
           ))}
         </div>
       </div>
-    </div>
+    </Element>
   );
 }
 

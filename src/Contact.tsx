@@ -1,6 +1,10 @@
 import { useLang } from '@/context/LanguageContext';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { IEmailTemplateProps } from './EmailTemplate';
+import Link from 'next/link';
+import SVGGitHub from '@/public/images/github.svg';
+import SVGLinkedIn from '@/public/images/linkedin.svg';
+import { Element } from 'react-scroll';
 
 function Contact() {
   const { language } = useLang();
@@ -25,12 +29,11 @@ function Contact() {
   };
 
   return (
-    <div className="flex flex-col w-full h-96 items-left mb-40 font-sans text-gray-200">
-      <div className="">
+    <Element name='contact' className="flex flex-col w-full h-96 items-left mb-40 font-sans text-gray-200">
         <h1 className="text-4xl mb-6 font-mono font-medium">
           {lang ? 'CONTÁCTAME' : 'CONTACT ME'}
         </h1>
-        <div className="flex gap-2 w-full text-lg">
+        <div className="flex gap-6 w-full text-lg">
           <form
             className="flex flex-col gap-3 w-1/2"
             onSubmit={handleSubmit(onSubmit)}
@@ -61,20 +64,45 @@ function Contact() {
               {lang ? 'Enviar' : 'Send'}
             </button>
           </form>
-          <div className="flex flex-col p-2 w-1/2 gap-2 text-xl">
+
+          <div className="flex flex-col p-2 w-1/2 gap-2 text-lg">
             <h1>
-              Estoy abierto a nuevas oportunidades y colaboraciones. Si tenés
-              algún proyecto interesante, una oferta de trabajo, o simplemente
-              querés charlar sobre tecnología y desarrollo web, no dudes en
-              contactarme.
+              {lang
+                ? 'En busqueda de nuevas oportunidades, retos y colaboraciones. Si tenés algún proyecto en mente o una oferta de trabajo, enviame un correo.'
+                : "I'm looking for new opportunities, challenges, and collaborations. If you have a project or a job offer, please send me an email."}
             </h1>
-            <h1>Podés enviarme un mensaje usando el formulario a
-              continuación o escribirme directamente a <span className='text-second hover:cursor-copy' onClick={() => console.log("hola")}>tobias.nicolas001@gmail.com</span>. Haré lo
-              posible por responderte a la brevedad. ¡Espero tu mensaje!</h1>
+            <h1>
+              {lang
+                ? 'Enviame un mensaje utilizando el formulario o escribime directamente a '
+                : 'Send me a message using the form or write to me directly at '}
+              <span className="text-second">tobias.nicolas001@gmail.com</span>
+              {lang
+                ? '. Responderé lo más pronto posible'
+                : ". I'll respond as soon as possible."}
+            </h1>
+            <div className="flex justify-center gap-6 mt-4">
+              <Link
+                href={'https://www.linkedin.com/in/tobiasnicolasn/'}
+                target="_blank"
+                className="bg-button hover:bg-offset-button ring-second hover:ring-2 duration-300 rounded-lg w-12 h-12 flex items-center justify-center"
+              >
+                <div className="w-6 h-6">
+                  <SVGLinkedIn />
+                </div>
+              </Link>
+              <Link
+                href={'https://github.com/tobiasNicolasN'}
+                target="_blank"
+                className="bg-button hover:bg-offset-button ring-second hover:ring-2 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
+              >
+                <div className="w-8 h-8">
+                  <SVGGitHub />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+    </Element>
   );
 }
 
