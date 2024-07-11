@@ -7,12 +7,15 @@ import SVGLinkedIn from '@/public/images/linkedin.svg';
 import { Element } from 'react-scroll';
 import { useState } from 'react';
 import SVGSpinner from '../public/images/spinner.svg';
+import SVGCheck from '../public/images/check.svg';
 
 function Contact() {
   const { language } = useLang();
   const lang = language === 'spanish';
   const { register, handleSubmit } = useForm<IEmailTemplateProps>();
-  const [sendingEmail, setSendingEmail] = useState(false);
+
+  // Send: 0, Sending: 1, Sended: 2, Error: 4
+  const [sendingEmail, setSendingEmail] = useState(0);
 
   const sendEmail = async (name: string, email: string, message: string) => {
     const res = await fetch('/api/send', {
@@ -28,9 +31,13 @@ function Contact() {
 
   const onSubmit: SubmitHandler<IEmailTemplateProps> = async (data) => {
     try {
-      setSendingEmail(true);
+      setSendingEmail(1);
       await sendEmail(data.name, data.email, data.message);
-      setSendingEmail(false);
+      setSendingEmail(2);
+      setTimeout(() => {
+        // reset form
+        setSendingEmail(0);
+      }, 1500);
       return console.log('Email enviado correctamente');
     } catch (error) {
       console.error('Error enviando el email:', error);
@@ -52,40 +59,58 @@ function Contact() {
         >
           <input
             autoComplete="off"
+            id="inputName"
             className="p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button focus:outline-none focus:border-b-second hover:border-b-second"
             placeholder={lang ? 'Nombre' : 'Name'}
             {...register('name')}
           />
           <input
             autoComplete="off"
+            id="inputEmail"
             className="p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button focus:outline-none focus:border-b-second hover:border-b-second"
             placeholder={lang ? 'Correo electrónico' : 'E-mail'}
             {...register('email')}
           />
           <textarea
             autoComplete="off"
+            id="inputMessage"
             className="p-2 h-40 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button focus:outline-none focus:border-b-second hover:border-b-second"
             maxLength={250}
             placeholder={lang ? 'Mensaje' : 'Message'}
             {...register('message')}
           />
 
-          {sendingEmail ? (
-            <button
-              className="bg-offset-button ring-2 ring-second duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2 text-gray-400"
-              disabled={true}
-            >
-              <div className="w-6 h-6 flex item-center">
-                <SVGSpinner />
-              </div>
-              {lang ? 'Enviando' : 'Sending'}
-            </button>
-          ) : (
+          {sendingEmail === 0 && (
             <button
               className="bg-button hover:bg-offset-button hover:ring-2 ring-second duration-300 rounded-lg h-10"
               type="submit"
             >
               {lang ? 'Enviar' : 'Send'}
+            </button>
+          )}
+
+          {sendingEmail === 1 && (
+            <button
+              className="bg-offset-button ring-2 ring-second duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2 text-gray-400"
+              disabled={true}
+            >
+              <div className="w-6 h-6 flex items-center">
+                <SVGSpinner />
+              </div>
+              {lang ? 'Enviando' : 'Sending'}
+            </button>
+          )}
+
+          {sendingEmail === 2 && (
+            <button
+              className="bg-offset-button ring-2 ring-green-700 text-gray-400 duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2"
+              type="submit"
+              disabled={true}
+            >
+              <div className="w-6 h-6 flex items-center">
+                <SVGCheck />
+              </div>
+              {lang ? 'Enviado' : 'Sended'}
             </button>
           )}
         </form>
@@ -102,14 +127,14 @@ function Contact() {
               : 'Send me a message using the form or write to me directly at '}
             <span className="text-second">tobias.nicolas001@gmail.com</span>
             {lang
-              ? '. Responderé lo más pronto posible'
+              ? '. Responderé lo más pronto posible.'
               : ". I'll respond as soon as possible."}
           </h1>
           <div className="flex justify-center gap-6 mt-4">
             <Link
               href={'https://www.linkedin.com/in/tobiasnicolasn/'}
               target="_blank"
-              className="bg-button hover:bg-offset-button ring-second hover:ring-2 duration-300 rounded-lg w-12 h-12 flex items-center justify-center"
+              className="bg-button hover:bg-offset-button ring-second hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
             >
               <div className="w-6 h-6">
                 <SVGLinkedIn />
@@ -118,7 +143,7 @@ function Contact() {
             <Link
               href={'https://github.com/tobiasNicolasN'}
               target="_blank"
-              className="bg-button hover:bg-offset-button ring-second hover:ring-2 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
+              className="bg-button hover:bg-offset-button ring-second hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
             >
               <div className="w-8 h-8">
                 <SVGGitHub />
