@@ -7,7 +7,6 @@ import NavBar from '@/src/NavBar';
 import Skills from '@/src/Skills';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import {Element} from 'react-scroll'
 
 export default function Home() {
   const { language, setLanguage } = useLang();

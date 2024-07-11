@@ -16,7 +16,7 @@ const config: Config = {
     },
     extend : {
       colors: {
-       "second" : "#7f5af0",
+       "second" : "rgb(173 143 255)",
        "offset-second" : "#e068fd",
        "button" : "#29293e",
        "offset-button" : "#374151",
