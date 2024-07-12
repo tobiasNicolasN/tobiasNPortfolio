@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
+import { useLang } from '@/context/LanguageContext';
 import SVGEnglish from '../public/images/english.svg';
 import SVGSpanish from '../public/images/spanish.svg';
-import { useLang } from '@/context/LanguageContext';
 
 function DropDown() {
   const { language, setLanguage } = useLang();
