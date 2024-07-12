@@ -1,3 +1,5 @@
+'use client'
+
 import { useLang } from '@/context/LanguageContext';
 import { Link } from 'react-scroll'
 import DropDown from './DropDown';

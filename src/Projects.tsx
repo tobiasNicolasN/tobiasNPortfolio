@@ -1,3 +1,4 @@
+'use client'
 import { useLang } from '@/context/LanguageContext';
 import {projects} from './projectsArrays'
 

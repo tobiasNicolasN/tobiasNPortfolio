@@ -1,3 +1,4 @@
+'use client';
 import { useLang } from '@/context/LanguageContext';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { IEmailTemplateProps } from './EmailTemplate';
