@@ -42,7 +42,7 @@ function Contact() {
   return (
     <Element
       name="contact"
-      className="flex flex-col w-full h-96 items-left mb-40 font-sans text-gray-200"
+      className="flex flex-col w-full items-left mb-40 font-sans text-gray-200"
     >
       <h1 className="text-4xl mb-6 font-mono font-medium">
         {lang ? 'CONTÁCTAME' : 'CONTACT ME'}

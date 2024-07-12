@@ -37,12 +37,12 @@ function Skills() {
   return (
     <Element
       name="skills"
-      className="flex flex-col w-full h-96 items-left mt-40 mb-40 font-sans text-gray-200"
+      className="flex flex-col w-full items-left mb-40 font-sans text-gray-200"
     >
       <h1 className="text-4xl font-mono font-medium">
         {lang ? 'HABILIDADES' : 'SKILLS'}
       </h1>
-      <div className="flex flex-wrap flex-col mt-8 min-h-96">
+      <div className="flex flex-wrap flex-col mt-8">
         <div className="flex gap-6 mb-6">
           <button
             className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  px-3 p-2 inline-flex items-center justify-center w-32 ${
