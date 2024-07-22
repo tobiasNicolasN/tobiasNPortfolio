@@ -37,7 +37,7 @@ function Skills() {
   return (
     <Element
       name="skills"
-      className="flex flex-col w-full items-left mb-40 font-sans text-gray-200"
+      className="flex flex-col w-full items-left mt-40 mb-40 font-sans text-gray-200"
     >
       <h1 className="text-4xl font-mono font-medium">
         {lang ? 'HABILIDADES' : 'SKILLS'}

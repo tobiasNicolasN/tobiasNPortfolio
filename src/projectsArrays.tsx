@@ -19,13 +19,13 @@ const cashTracker: IProjects = {
     'A fullstack application that allows you to record expenses and consumption. It uses the dollar API to log expenses in Argentine pesos and dollars, according to the exchange rate at the time of the expense. Available in mobile and web versions.',
   ],
   techs: [
-    <SVGTypescript />,
-    <SVGReact />,
-    <SVGTailwind />,
-    <SVGNodejs />,
-    <SVGExpress />,
-    <SVGMongodb />,
-    <SVGMongoose />,
+    <SVGTypescript key={0} />,
+    <SVGReact key={1} />,
+    <SVGTailwind key={2} />,
+    <SVGNodejs key={3} />,
+    <SVGExpress key={4} />,
+    <SVGMongodb key={5} />,
+    <SVGMongoose key={6} />,
   ],
 };
 
