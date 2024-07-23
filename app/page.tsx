@@ -4,18 +4,12 @@ import { useLang } from '@/context/LanguageContext';
 import Contact from '@/src/Contact';
 import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
-import Projects from '@/src/Projects';
 import Skills from '@/src/Skills';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 export default function Home() {
-  const { language, setLanguage } = useLang();
+  const { language } = useLang();
   const lang = language === 'spanish';
-
-  useEffect(() => {
-    setLanguage('spanish');
-  }, []);
 
   return (
     <div>
