@@ -3,43 +3,149 @@
 import { useLang } from '@/context/LanguageContext';
 import { Link } from 'react-scroll';
 import DropDown from './DropDown';
-import { useState } from 'react';
-import SVGMenu from '../public/images/menu.svg'
+import { useEffect, useState } from 'react';
+import SVGSpanish from '../public/images/spanish.svg';
+import SVGEnglish from '../public/images/english.svg';
 
 function NavBar() {
-  const { language } = useLang();
+  const { language, setLanguage } = useLang();
   const lang = language === 'spanish';
-  const [activeSection, setActiveSection] = useState<string>('');
-  const [bgmax, setBgmax] = useState<boolean>(false);
+  const [menu, setMenu] = useState<boolean>(false);
+
+  // Desactiva el scroll de la pagina cuando se abre el menu
+  useEffect(() => {
+    if (menu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'; // Asegura que se reactive el scroll al desmontar
+    };
+  }, [menu]);
 
   return (
     <>
-      {/* {mobile menu} */}
+      {/* {Menu para dispositivos moviles} */}
       <div
-  onClick={() => setBgmax(true)}
-  className={`bg-button fixed duration-300 z-50 flex items-center justify-center ${
-    bgmax ? 'w-full h-full top-0 right-0' : 'top-2 right-2 w-12 h-12 rounded-xl'
-  }`}
->
-  <div className={`absolute top-2 right-2 w-8 h-8 duration-500 ${bgmax ? "bg-bg" : ""}`}>
-  {bgmax ? <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
+        className={`md:hidden bg-button fixed duration-500 z-50 flex items-center text-center justify-center ${
+          menu
+            ? 'w-full h-full top-0 right-0'
+            : 'top-3 right-4 w-10 h-10 rounded-xl'
+        }`}
+      >
+        <ul
+          className={`flex flex-col font-sans gap-3 text-3xl text-gray-200 ${
+            menu
+              ? 'animate-fade-down animate-once animate-duration-300 animate-delay-500 animate-ease-in'
+              : 'hidden'
+          }`}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg> : <SVGMenu/>}
-  </div>
-  {/* Your content here */}
-</div>
-
+          <li>
+            <Link
+              href="/"
+              to="projects"
+              onClick={() => setMenu(false)}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              {' '}
+              <span className="font-semibold">01</span>{' '}
+              {lang ? 'proyectos' : 'projects'}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              to="skills"
+              onClick={() => setMenu(false)}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <span className="font-semibold">02</span>{' '}
+              {lang ? 'habilidades' : 'skills'}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              to="contact"
+              onClick={() => setMenu(false)}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              {' '}
+              <span className="font-semibold">03</span>{' '}
+              {lang ? 'contacto' : 'contact'}
+            </Link>
+          </li>
+          <li>
+            <div className="mt-6 flex gap-4">
+              <button
+                onClick={() => setLanguage('spanish')}
+                className={`z-50 text-xl duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                  lang ? 'ring-2' : ''
+                }`}
+              >
+                <div
+                  className="w-8 relative mr-2"
+                  style={{ aspectRatio: '16/9' }}
+                >
+                  <SVGSpanish />
+                </div>
+                ES
+              </button>
+              <button
+                onClick={() => setLanguage('english')}
+                className={`z-50 text-xl duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                  lang ? '' : 'ring-2'
+                }`}
+              >
+                <div
+                  className="w-8 relative mr-2"
+                  style={{ aspectRatio: '16/9' }}
+                >
+                  <SVGEnglish />
+                </div>
+                EN
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        onClick={() => setMenu(!menu)}
+        className={`md:hidden bg-button fixed top-3 z-50 rounded-lg right-4 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
+          menu ? '' : ''
+        }`}
+      >
+        <div
+          className={`${
+            menu ? 'w-6 flex items-center justify-center' : 'space-y-1'
+          } `}
+        >
+          <div
+            className={`w-6 h-1 bg-white duration-500 ${
+              menu ? 'rotate-45 absolute' : ''
+            }`}
+          ></div>
+          <div
+            className={`w-6 h-1 bg-white duration-500 ${
+              menu ? '-rotate-45 absolute' : ''
+            }`}
+          ></div>
+          <div
+            className={`w-6 h-1 bg-white duration-200 ${menu ? 'hidden' : ''}`}
+          ></div>
+        </div>
+      </div>
 
       <div className="w-full p-2 flex flex-col md:items-center fixed bg-bg top-0 z-40">
         <div className="flex md:justify-between md:items-center mt-2 mb-2 md:w-8/12 font-sans text-gray-200">
@@ -62,9 +168,10 @@ function NavBar() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                onSetActive={() => setActiveSection('projects')}
               >
-                <span className="bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-700 ease-out">
+                <span
+                  className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out `}
+                >
                   <span className="font-semibold">01</span>{' '}
                   {lang ? 'proyectos' : 'projects'}
                 </span>
@@ -79,9 +186,10 @@ function NavBar() {
                 smooth={true}
                 offset={-150}
                 duration={700}
-                onSetActive={() => setActiveSection('skills')}
               >
-                <span className="bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-700 ease-out">
+                <span
+                  className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
+                >
                   <span className="font-semibold">02</span>{' '}
                   {lang ? 'habilidades' : 'skills'}
                 </span>
@@ -96,9 +204,10 @@ function NavBar() {
                 smooth={true}
                 offset={-70}
                 duration={700}
-                onSetActive={() => setActiveSection('contact')}
               >
-                <span className="bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-700 ease-out">
+                <span
+                  className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
+                >
                   <span className="font-semibold">03</span>{' '}
                   {lang ? 'contacto' : 'contact'}
                 </span>
