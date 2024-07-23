@@ -37,11 +37,11 @@ export default function Home() {
               : 'Argentinian and a tech enthusiast. I work with TypeScript and love exploring the latest in web and mobile development.'}
           </h1>
           <h1 className="text-base md:text-xl tracking-tracking-wider mt-2 text-gray-300 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
-            "
+            &quot;
             {lang
               ? `Poner el alma, creatividad y amor en lo que haces, dejando una parte de vos siempre en tu trabajo.`
               : 'To do something with soul, creativity or love; to put something of yourself in your work.'}
-            "
+            &quot;
           </h1>
           {/* <Projects /> */}
           <Skills />
