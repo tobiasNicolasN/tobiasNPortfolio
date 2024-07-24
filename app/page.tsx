@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      <div className="w-full flex flex-col items-center mt-40">
+      <div className="w-full flex flex-col items-center mt-32 md:mt-40">
         <main className="flex w-11/12 md:w-8/12 flex-col justify-center font-sans">
           <div className="animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <Link

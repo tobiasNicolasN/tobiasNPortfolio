@@ -68,7 +68,7 @@ function Contact() {
               })}
             />
             {errors.name && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-base pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-sm md:text-base pointer-events-none font-sans">
                 {errors.name.message}
               </div>
             )}
@@ -97,7 +97,7 @@ function Contact() {
               })}
             />
             {errors.email && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-base pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-sm md:text-base pointer-events-none font-sans">
                 {errors.email.message}
               </div>
             )}
@@ -124,7 +124,7 @@ function Contact() {
               })}
             />
             {errors.message && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-base pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-sm md:text-base pointer-events-none font-sans">
                 {errors.message.message}
               </div>
             )}
