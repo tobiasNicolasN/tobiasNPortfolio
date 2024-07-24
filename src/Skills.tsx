@@ -37,15 +37,15 @@ function Skills() {
   return (
     <Element
       name="skills"
-      className="flex flex-col w-full items-left mt-40 mb-40 font-sans text-gray-200"
+      className="flex flex-col w-full items-left mt-20 mb-20 md:mt-40 md:mb-40 font-sans text-gray-200"
     >
-      <h1 className="text-4xl font-mono font-medium">
+      <h1 className="text-xl md:text-4xl font-mono font-medium">
         {lang ? 'HABILIDADES' : 'SKILLS'}
       </h1>
-      <div className="flex flex-wrap flex-col mt-8">
-        <div className="flex gap-6 mb-6">
+      <div className="flex md:flex-wrap flex-col mt-4 md:mt-8">
+        <div className="flex gap-4 md:gap-6 mb-6 text-xs">
           <button
-            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  px-3 p-2 inline-flex items-center justify-center w-32 ${
+            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  md:px-3 md:py-0 md:p-2 inline-flex items-center justify-center py-2 w-20 md:w-32 ${
               skill === 0 ? 'ring-second ring-2' : ''
             }`}
             onClick={() => changeSkill(0)}
@@ -54,7 +54,7 @@ function Skills() {
             FRONT-END
           </button>
           <button
-            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  px-3 p-2 inline-flex items-center justify-center w-32 ${
+            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  md:px-3 md:py-0 md:p-2 inline-flex items-center justify-center py-2 w-20 md:w-32 ${
               skill === 1 ? 'ring-second ring-2' : ''
             }`}
             onClick={() => changeSkill(1)}
@@ -62,7 +62,7 @@ function Skills() {
             BACK-END
           </button>
           <button
-            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  px-3 p-2 inline-flex items-center justify-center w-32 ${
+            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  md:px-3 md:py-0 md:p-2 inline-flex items-center justify-center py-2 w-20 md:w-32 ${
               skill === 2 ? 'ring-second ring-2' : ''
             }`}
             onClick={() => changeSkill(2)}
@@ -70,7 +70,7 @@ function Skills() {
             TOOLS
           </button>
           <button
-            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  px-3 p-2 inline-flex items-center justify-center w-32 ${
+            className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  md:px-3 md:py-0 md:p-2 inline-flex items-center justify-center py-2 w-20 md:w-32 ${
               skill === 3 ? 'ring-second ring-2' : ''
             }`}
             onClick={() => changeSkill(3)}
@@ -79,19 +79,19 @@ function Skills() {
           </button>
         </div>
         <div
-          className={`flex flex-wrap gap-6 duration-300 ${
+          className={`flex flex-wrap gap-4 md:gap-6 duration-300 ${
             animationSkills ? 'opacity-0' : 'opacity-100'
           }`}
         >
           {skills[skill].map((data, index) => (
             <div
               key={index}
-              className="flex flex-col gap-2 rounded-lg items-center justify-center bg-button bg-opacity-50 w-32 h-32 hover:bg-opacity-100 hover:scale-105 duration-300"
+              className="flex flex-col gap-2 rounded-lg items-center justify-center bg-button bg-opacity-50 w-20 h-24 md:w-32 md:h-32 hover:bg-opacity-100 hover:scale-105 duration-300"
             >
-              <div className="w-12 h-12">
+              <div className="w-6 h-6  md:w-12 md:h-12">
                 <data.svg />
               </div>
-              <h1 className="text-sm">{data.name}</h1>
+              <h1 className="text-xs md:text-sm">{data.name}</h1>
             </div>
           ))}
         </div>
