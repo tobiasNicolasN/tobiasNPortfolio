@@ -32,7 +32,7 @@ function NavBar() {
         className={`md:hidden bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
           menu
             ? 'w-full h-full top-0 right-0'
-            : 'top-3 right-4 w-10 h-10 rounded-xl'
+            : 'top-2 right-4 w-10 h-10 rounded-xl'
         }`}
       >
         <ul
@@ -122,7 +122,7 @@ function NavBar() {
       </div>
       <div
         onClick={() => setMenu(!menu)}
-        className={`md:hidden bg-button fixed top-3 z-50 rounded-lg right-4 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
+        className={`md:hidden bg-button fixed top-2 z-50 rounded-lg right-4 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
           menu ? '' : ''
         }`}
       >
@@ -132,17 +132,17 @@ function NavBar() {
           } `}
         >
           <div
-            className={`w-6 h-1 bg-white duration-500 ${
+            className={`w-6 h-[2px] bg-white duration-500 ${
               menu ? 'rotate-45 absolute' : ''
             }`}
           ></div>
           <div
-            className={`w-6 h-1 bg-white duration-500 ${
+            className={`w-6 h-[2px] bg-white duration-500 ${
               menu ? '-rotate-45 absolute' : ''
             }`}
           ></div>
           <div
-            className={`w-6 h-1 bg-white duration-200 ${menu ? 'hidden' : ''}`}
+            className={`w-6 h-[2px] bg-white duration-200 ${menu ? 'hidden' : ''}`}
           ></div>
         </div>
       </div>
@@ -153,7 +153,7 @@ function NavBar() {
             <Link
               href="/"
               to=""
-              className="ml-2 md:ml-0 text-2xl font-medium hover:text-offset-second ease-in duration-300"
+              className="ml-2 md:ml-0 text-xl md:text-2xl font-medium hover:text-offset-second ease-in duration-300"
             >
               TobiasNicolasN
             </Link>

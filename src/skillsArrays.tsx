@@ -53,7 +53,7 @@ export const skillsFront: ISkills[] = [
     svg: cssSVG,
   },
   {
-    name: 'Tailwind CSS',
+    name: 'Tailwind',
     svg: tailwindSVG,
   },
   {
@@ -79,7 +79,7 @@ export const skillsBack: ISkills[] = [
     name: 'MongoDB',
     svg: mongodbSVG,
   },{
-    name: 'Mongoose.js',
+    name: 'Mongoose',
     svg: mongooseSVG,
   },
   {
@@ -106,7 +106,7 @@ export const skillsTools: ISkills[] = [
     svg: githubSVG,
   },
   {
-    name: 'GitHub Actions',
+    name: 'Actions',
     svg: actionsSVG,
   },
 ];

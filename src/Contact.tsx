@@ -49,7 +49,7 @@ function Contact() {
         {lang ? 'CONTÁCTAME' : 'CONTACT ME'}
       </h1>
 
-      <div className="flex flex-col-reverse md:flex md:gap-6 w-full md:text-lg">
+      <div className="flex flex-col-reverse md:flex md:flex-row md:gap-6 w-full md:text-lg">
         <form
           className="flex flex-col gap-5 mt-6 md:w-1/2"
           onSubmit={handleSubmit(onSubmit)}
