@@ -43,7 +43,7 @@ function Skills() {
         {lang ? 'HABILIDADES' : 'SKILLS'}
       </h1>
       <div className="flex md:flex-wrap flex-col mt-4 md:mt-8">
-        <div className="flex gap-4 md:gap-6 mb-6 text-xs">
+        <div className="flex gap-3 md:gap-6 mb-4 md:mb-6 text-xs">
           <button
             className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg  md:px-3 md:py-0 md:p-2 inline-flex items-center justify-center py-2 w-20 md:w-32 ${
               skill === 0 ? 'ring-second ring-2' : ''
@@ -79,7 +79,7 @@ function Skills() {
           </button>
         </div>
         <div
-          className={`flex flex-wrap gap-4 md:gap-6 duration-300 ${
+          className={`flex flex-wrap gap-3 md:gap-6 duration-300 ${
             animationSkills ? 'opacity-0' : 'opacity-100'
           }`}
         >

@@ -29,14 +29,14 @@ function NavBar() {
     <>
       {/* {Menu para dispositivos moviles} */}
       <div
-        className={`md:hidden bg-button fixed duration-500 z-50 flex items-center text-center justify-center ${
+        className={`md:hidden bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
           menu
             ? 'w-full h-full top-0 right-0'
             : 'top-3 right-4 w-10 h-10 rounded-xl'
         }`}
       >
         <ul
-          className={`flex flex-col font-sans gap-3 text-3xl text-gray-200 ${
+          className={`flex flex-col font-sans gap-3 text-xl text-gray-200 ${
             menu
               ? 'animate-fade-down animate-once animate-duration-300 animate-delay-500 animate-ease-in'
               : 'hidden'
