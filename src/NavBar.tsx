@@ -87,34 +87,24 @@ function NavBar() {
             </Link>
           </li>
           <li>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-2 flex gap-4">
               <button
                 onClick={() => setLanguage('spanish')}
-                className={`z-50 text-xl duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-xs duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? 'ring-2' : ''
                 }`}
               >
-                <div
-                  className="w-8 relative mr-2"
-                  style={{ aspectRatio: '16/9' }}
-                >
-                  <SVGSpanish />
-                </div>
-                ES
+                
+                ESPAÑOL
               </button>
               <button
                 onClick={() => setLanguage('english')}
-                className={`z-50 text-xl duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-xs duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? '' : 'ring-2'
                 }`}
               >
-                <div
-                  className="w-8 relative mr-2"
-                  style={{ aspectRatio: '16/9' }}
-                >
-                  <SVGEnglish />
-                </div>
-                EN
+                
+                ENGLISH
               </button>
             </div>
           </li>

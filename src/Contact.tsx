@@ -180,7 +180,7 @@ function Contact() {
           )}
         </form>
 
-        <div className="flex flex-col md:p-2 md:w-1/2 gap-2 text-base md:text-lg">
+        <div className="flex flex-col md:p-2 md:w-1/2 gap-2 text-sm md:text-lg">
           <h1>
             {lang
               ? 'En busqueda de nuevas oportunidades, retos y colaboraciones. Si tenés algún proyecto en mente o una oferta de trabajo, enviame un correo.'
