@@ -43,15 +43,15 @@ function Contact() {
   return (
     <Element
       name="contact"
-      className="flex flex-col w-full items-left mb-20 md:mb-40 font-sans text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[900ms] animate-ease-in"
+      className="flex flex-col w-full items-left mb-20 md:mb-24 font-sans text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[900ms] animate-ease-in"
     >
-      <h1 className="text-xl md:text-4xl mb-4 gap-4 md:mb-6 font-mono font-medium">
+      <h1 className="text-xl md:text-2xl mb-4 gap-4 font-mono font-medium">
         {lang ? 'CONTÁCTAME' : 'CONTACT ME'}
       </h1>
 
-      <div className="flex flex-col-reverse md:flex md:flex-row md:gap-6 w-full md:text-lg">
+      <div className="flex flex-col-reverse lg:flex lg:flex-row md:gap-6 w-full md:text-base">
         <form
-          className="flex flex-col gap-5 mt-6 md:w-1/2"
+          className="flex flex-col gap-5 mt-6 lg:w-1/2"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex relative items-center">
@@ -180,7 +180,7 @@ function Contact() {
           )}
         </form>
 
-        <div className="flex flex-col md:p-2 md:w-1/2 gap-2 text-sm md:text-lg">
+        <div className="flex flex-col md:p-2 lg:w-1/2 gap-2 text-sm md:text-base">
           <h1>
             {lang
               ? 'En busqueda de nuevas oportunidades, retos y colaboraciones. Si tenés algún proyecto en mente o una oferta de trabajo, enviame un correo.'
@@ -195,7 +195,7 @@ function Contact() {
               ? '. Responderé lo más pronto posible.'
               : ". I'll respond as soon as possible."}
           </h1>
-          <div className="hidden md:flex justify-center gap-6 mt-4">
+          <div className="hidden lg:flex justify-center gap-6 mt-4">
             <Link
               href={'https://www.linkedin.com/in/tobiasnicolasn/'}
               target="_blank"

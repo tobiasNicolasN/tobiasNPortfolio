@@ -4,8 +4,6 @@ import { useLang } from '@/context/LanguageContext';
 import { Link } from 'react-scroll';
 import DropDown from './DropDown';
 import { useEffect, useState } from 'react';
-import SVGSpanish from '../public/images/spanish.svg';
-import SVGEnglish from '../public/images/english.svg';
 
 function NavBar() {
   const { language, setLanguage } = useLang();
@@ -29,10 +27,10 @@ function NavBar() {
     <>
       {/* {Menu para dispositivos moviles} */}
       <div
-        className={`md:hidden bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
+        className={`lg:hidden bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
           menu
             ? 'w-full h-full top-0 right-0'
-            : 'top-2 right-4 w-10 h-10 rounded-xl'
+            : 'top-2 right-4 md:right-14 w-10 h-10 rounded-xl'
         }`}
       >
         <ul
@@ -42,7 +40,7 @@ function NavBar() {
               : 'hidden'
           }`}
         >
-          <li>
+          <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
               to="projects"
@@ -57,7 +55,7 @@ function NavBar() {
               {lang ? 'proyectos' : 'projects'}
             </Link>
           </li>
-          <li>
+          <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
               to="skills"
@@ -71,7 +69,7 @@ function NavBar() {
               {lang ? 'habilidades' : 'skills'}
             </Link>
           </li>
-          <li>
+          <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
               to="contact"
@@ -87,7 +85,7 @@ function NavBar() {
             </Link>
           </li>
           <li>
-            <div className="mt-2 flex gap-4">
+            <div className="flex gap-4">
               <button
                 onClick={() => setLanguage('spanish')}
                 className={`z-50 text-xs duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
@@ -112,7 +110,7 @@ function NavBar() {
       </div>
       <div
         onClick={() => setMenu(!menu)}
-        className={`md:hidden bg-button fixed top-2 z-50 rounded-lg right-4 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
+        className={`lg:hidden bg-button fixed top-2 z-50 rounded-lg right-4 md:right-14 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
           menu ? '' : ''
         }`}
       >
@@ -137,18 +135,18 @@ function NavBar() {
         </div>
       </div>
 
-      <div className="w-full p-2 flex flex-col md:items-center fixed bg-bg top-0 z-40">
-        <div className="flex md:justify-between md:items-center mt-2 mb-2 md:w-8/12 font-sans text-gray-200">
+      <div className="w-full py-1 flex flex-col items-center fixed bg-bg top-0 z-40">
+        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-9/12 font-sans text-gray-200">
           <div className="md:flex md:items-center gap-2">
             <Link
               href="/"
               to=""
-              className="ml-2 md:ml-0 text-xl md:text-2xl font-medium hover:text-offset-second ease-in duration-300"
+              className="text-xl md:text-2xl font-medium hover:text-offset-second ease-in duration-300"
             >
               TobiasNicolasN
             </Link>
           </div>
-          <ul className="hidden md:flex items-center justify-center gap-4">
+          <ul className="hidden lg:flex items-center justify-center gap-4">
             <li>
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
