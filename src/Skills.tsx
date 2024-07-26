@@ -19,6 +19,7 @@ function Skills() {
   // 0 = Front-end, 1 = Back-end, 2 = Tools, 3 = Goals
   const [skill, setSkill] = useState<number>(0);
   const [animationSkills, setAnimationSkills] = useState(false);
+  const [techs, setTechs] = useState<string[]>([])
 
   // Realiza la transición previo al cambio de array
   const changeSkill = (numSkills: number) => {
@@ -36,13 +37,30 @@ function Skills() {
     skillsGoals,
   ];
 
+  // Añade y elimina la tecnologia indicada del estado de tecnologias para manejar el filtro
+  const toggleTech = (tech: string) => {
+    setTechs((prevTechs) => {
+      const index = prevTechs.indexOf(tech.toLowerCase());
+      if (index === -1) {
+        return [...prevTechs, tech.toLowerCase()];
+      } else {
+        return prevTechs.filter(t => t !== tech.toLowerCase());
+      }
+    });
+  };
+
+  // Filtra los proyectos mediante el estado de tecnologias
+  const filteredProjects = projects.filter(project =>
+    techs.every(tech => project.techs.includes(tech))
+  );
+
   return (
     <Element
-      name="skills"
+      name="projects"
       className="flex flex-col w-full items-left mt-28 mb-28 md:mt-32 md:mb-32 lg:mt-40 lg:mb-40 font-sans text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-500 animate-ease-in"
     >
       <h1 className="text-xl md:text-2xl font-mono font-medium">
-        {lang ? 'HABILIDADES' : 'SKILLS'}
+        {lang ? 'PROYECTOS' : 'PROJECTS'}
       </h1>
       <div className="flex md:flex-wrap flex-col mt-4">
         <div className="flex gap-3 md:gap-4 mb-4 md:mb-4 text-xs md:text-sm">
@@ -87,8 +105,9 @@ function Skills() {
         >
           {skills[skill].map((data, index) => (
             <div
+            onClick={() => toggleTech(data.name)}
               key={index}
-              className="flex flex-col gap-2 md:gap-3 rounded-lg items-center justify-center bg-button bg-opacity-50 w-[72px] h-20 md:w-24 md:h-28 hover:bg-opacity-100 hover:scale-105 duration-300"
+              className={`flex flex-col gap-2 md:gap-3 rounded-lg items-center justify-center bg-button bg-opacity-50 w-[72px] h-20 md:w-24 md:h-28 cursor-pointer hover:ring-2 ring-second duration-300 ${techs.includes(data.name.toLowerCase()) ? "ring-2 bg-opacity-100" : ""}`}
             >
               <div className="w-6 h-6 md:w-8 md:h-8">
                 <data.svg />
@@ -98,7 +117,7 @@ function Skills() {
           ))}
         </div>
       </div>
-      <Projects projects={projects}/>
+      <Projects projects={filteredProjects}/>
     </Element>
   );
 }

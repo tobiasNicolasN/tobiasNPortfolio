@@ -1,11 +1,12 @@
 import { useLang } from '@/context/LanguageContext';
 import React from 'react';
+import { Element } from 'react-scroll';
 
 function About() {
   const { language } = useLang();
   const lang = language === 'spanish';
   return (
-    <>
+    <Element name='about'>
       <div className="animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
         <h1 className="text-base md:text-lg lg:text-2xl font-sans text-second hover:text-offset-second duration-300 font-medium inline">
           {lang
@@ -28,7 +29,7 @@ function About() {
           : 'To do something with soul, creativity or love; to put something of yourself in your work.'}
         &quot;
       </h1>
-    </>
+    </Element>
   );
 }
 

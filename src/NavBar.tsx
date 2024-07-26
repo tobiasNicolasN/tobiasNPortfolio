@@ -43,7 +43,7 @@ function NavBar() {
           <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
-              to="projects"
+              to="about"
               onClick={() => setMenu(false)}
               spy={true}
               smooth={true}
@@ -52,13 +52,13 @@ function NavBar() {
             >
               {' '}
               <span className="font-semibold">01</span>{' '}
-              {lang ? 'proyectos' : 'projects'}
+              {lang ? 'sobre mi' : 'about me'}
             </Link>
           </li>
           <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
-              to="skills"
+              to="projects"
               onClick={() => setMenu(false)}
               spy={true}
               smooth={true}
@@ -66,7 +66,7 @@ function NavBar() {
               duration={500}
             >
               <span className="font-semibold">02</span>{' '}
-              {lang ? 'habilidades' : 'skills'}
+              {lang ? 'proyectos' : 'projects'}
             </Link>
           </li>
           <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
@@ -151,7 +151,7 @@ function NavBar() {
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
                 href="/"
-                to="projects"
+                to="about"
                 spy={true}
                 smooth={true}
                 offset={-70}
@@ -161,7 +161,7 @@ function NavBar() {
                   className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out `}
                 >
                   <span className="font-semibold">01</span>{' '}
-                  {lang ? 'proyectos' : 'projects'}
+                  {lang ? 'sobre mi' : 'about me'}
                 </span>
               </Link>
             </li>
@@ -169,7 +169,7 @@ function NavBar() {
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
                 href="/"
-                to="skills"
+                to="projects"
                 spy={true}
                 smooth={true}
                 offset={-150}
@@ -179,7 +179,7 @@ function NavBar() {
                   className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
                 >
                   <span className="font-semibold">02</span>{' '}
-                  {lang ? 'habilidades' : 'skills'}
+                  {lang ? 'proyectos' : 'projects'}
                 </span>
               </Link>
             </li>

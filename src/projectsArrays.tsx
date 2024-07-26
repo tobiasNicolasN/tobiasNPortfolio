@@ -5,6 +5,8 @@ import SVGNodejs from '../public/images/nodejs.svg';
 import SVGExpress from '../public/images/express.svg';
 import SVGMongodb from '../public/images/mongodb.svg';
 import SVGNext from '../public/images/nextjs.svg';
+import SVGGit from '../public/images/git.svg';
+import SVGGitHub from '../public/images/github.svg';
 
 export interface IProjects {
   name: string;
@@ -20,7 +22,7 @@ const cashTracker: IProjects = {
     'A fullstack application that allows you to record expenses and consumption. It uses the dollar API to log expenses in Argentine pesos and dollars, according to the exchange rate at the time of the expense. Available in mobile and web versions.',
   ],
   techs: [
-"typescript", "react", "tailwind", "node.js", "express", "mongodb", "git"
+"typescript", "react", "tailwind", "node.js", "express", "mongodb", "git", "github"
   ],
   svg: [
     <SVGTypescript key={0} />,
@@ -29,6 +31,8 @@ const cashTracker: IProjects = {
     <SVGNodejs key={3} />,
     <SVGExpress key={4} />,
     <SVGMongodb key={5} />,
+    <SVGGit key={6}/>,
+    <SVGGitHub key={7}/>,
   ],
 };
 
@@ -39,13 +43,16 @@ const portfolio: IProjects = {
     'My portfolio showcases a minimalist approach, highlighting my projects and skills. It offers a modern, seamless visual experience, ensuring accessibility and professionalism.'
   ],
   techs: [
-    "typescript", "next.js",  "tailwind", "node.js", "git"
+    "typescript", "next.js",  "tailwind", "node.js", "git", "github"
   ],
   svg: [
     <SVGTypescript key={0}/>,
     <SVGNext key={1}/>,
     <SVGTailwind key={2}/>,
-    <SVGNodejs key={3}/>
+    <SVGNodejs key={3}/>,
+    <SVGGit key={4} />,
+    <SVGGitHub key={5} />
+
   ]
 }
 
