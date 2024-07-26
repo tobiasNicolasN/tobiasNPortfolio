@@ -33,10 +33,6 @@ export const skillsFront: ISkills[] = [
     svg: tsSVG,
   },
   {
-    name: 'JavaScript',
-    svg: jsSVG,
-  },
-  {
     name: 'Next.js',
     svg: nextSVG,
   },
@@ -45,20 +41,8 @@ export const skillsFront: ISkills[] = [
     svg: reactSVG,
   },
   {
-    name: 'HTML5',
-    svg: htmlSVG,
-  },
-  {
-    name: 'CSS3',
-    svg: cssSVG,
-  },
-  {
     name: 'Tailwind',
     svg: tailwindSVG,
-  },
-  {
-    name: 'Figma',
-    svg: figmaSVG,
   },
 ];
 
@@ -72,19 +56,12 @@ export const skillsBack: ISkills[] = [
     svg: expressSVG,
   },
   {
-    name: 'Firebase',
-    svg: firebaseSVG,
-  },
-  {
     name: 'MongoDB',
     svg: mongodbSVG,
-  },{
-    name: 'Mongoose',
-    svg: mongooseSVG,
   },
   {
-    name: 'NPM',
-    svg: npmSVG,
+    name: 'Mongoose',
+    svg: mongooseSVG,
   },
 ];
 
@@ -98,21 +75,45 @@ export const skillsTools: ISkills[] = [
     svg: viteSVG
   },
   {
+    name: 'GitHub',
+    svg: githubSVG,
+  },
+];
+
+export const skillsOthers: ISkills[] = [
+  {
+    name: 'JavaScript',
+    svg: jsSVG,
+  },
+  {
+    name: 'HTML5',
+    svg: htmlSVG,
+  },
+  {
+    name: 'CSS3',
+    svg: cssSVG,
+  },
+  {
+      name: 'Figma',
+      svg: figmaSVG,
+    },
+  {
+    name: 'Firebase',
+    svg: firebaseSVG,
+  },
+  {
+    name: 'NPM',
+    svg: npmSVG,
+  },
+  {
     name: 'VS Code',
     svg: vscodeSVG,
   },
   {
-    name: 'GitHub',
-    svg: githubSVG,
-  },
-  {
     name: 'Actions',
     svg: actionsSVG,
-  },
-];
-
-export const skillsGoals: ISkills[] = [
-  {
+    },
+    {
     name: 'Docker',
     svg: dockerSVG,
   },

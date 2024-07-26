@@ -4,7 +4,7 @@ import {
   ISkills,
   skillsBack,
   skillsFront,
-  skillsGoals,
+  skillsOthers,
   skillsTools,
 } from './skillsArrays';
 import { useLang } from '@/context/LanguageContext';
@@ -16,10 +16,10 @@ function Skills() {
   const { language } = useLang();
   const lang = language === 'spanish';
 
-  // 0 = Front-end, 1 = Back-end, 2 = Tools, 3 = Goals
+  // 0 = Front-end, 1 = Back-end, 2 = Tools, 3 = Others
   const [skill, setSkill] = useState<number>(0);
   const [animationSkills, setAnimationSkills] = useState(false);
-  const [techs, setTechs] = useState<string[]>([])
+  const [techs, setTechs] = useState<string[]>([]);
 
   // Realiza la transición previo al cambio de array
   const changeSkill = (numSkills: number) => {
@@ -34,7 +34,7 @@ function Skills() {
     skillsFront,
     skillsBack,
     skillsTools,
-    skillsGoals,
+    skillsOthers,
   ];
 
   // Añade y elimina la tecnologia indicada del estado de tecnologias para manejar el filtro
@@ -44,14 +44,14 @@ function Skills() {
       if (index === -1) {
         return [...prevTechs, tech.toLowerCase()];
       } else {
-        return prevTechs.filter(t => t !== tech.toLowerCase());
+        return prevTechs.filter((t) => t !== tech.toLowerCase());
       }
     });
   };
 
   // Filtra los proyectos mediante el estado de tecnologias
-  const filteredProjects = projects.filter(project =>
-    techs.every(tech => project.techs.includes(tech))
+  const filteredProjects = projects.filter((project) =>
+    techs.every((tech) => project.techs.includes(tech))
   );
 
   return (
@@ -71,7 +71,7 @@ function Skills() {
             onClick={() => changeSkill(0)}
             id="button"
           >
-          Frontend
+            Frontend
           </button>
           <button
             className={`duration-300 bg-button hover:bg-offset-button hover:ring-2  hover:ring-second rounded-lg md:p-2 inline-flex items-center justify-center py-2 w-[72px] md:w-24 ${
@@ -95,7 +95,7 @@ function Skills() {
             }`}
             onClick={() => changeSkill(3)}
           >
-            {lang ? 'Metas' : 'Goals'}
+            {lang ? 'Otras' : 'Others'}
           </button>
         </div>
         <div
@@ -105,19 +105,29 @@ function Skills() {
         >
           {skills[skill].map((data, index) => (
             <div
-            onClick={() => toggleTech(data.name)}
+              onClick={() => {
+                if (skill !== 3) {
+                  toggleTech(data.name);
+                }
+              }}
               key={index}
-              className={`flex flex-col gap-2 md:gap-3 rounded-lg items-center justify-center bg-button bg-opacity-50 w-[72px] h-20 md:w-24 md:h-28 cursor-pointer hover:ring-2 ring-second duration-300 ${techs.includes(data.name.toLowerCase()) ? "ring-2 bg-opacity-100" : ""}`}
+              className={`flex flex-col gap-2 md:gap-3 rounded-lg items-center justify-center bg-button bg-opacity-50 w-[72px] h-20 md:w-24 md:h-28 cursor-pointer lg:hover:ring-2 ring-second duration-300 ${
+                techs.includes(data.name.toLowerCase())
+                  ? 'ring-2 bg-opacity-100'
+                  : ''
+              }`}
             >
               <div className="w-6 h-6 md:w-8 md:h-8">
                 <data.svg />
               </div>
-              <h1 className="text-xs md:text-sm overflow-hidden">{data.name}</h1>
+              <h1 className="text-xs md:text-sm overflow-hidden">
+                {data.name}
+              </h1>
             </div>
           ))}
         </div>
       </div>
-      <Projects projects={filteredProjects}/>
+      <Projects projects={filteredProjects} />
     </Element>
   );
 }

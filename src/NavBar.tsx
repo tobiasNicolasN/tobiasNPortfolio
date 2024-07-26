@@ -57,9 +57,9 @@ function NavBar() {
           </li>
           <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
+              onClick={() => setMenu(false)}
               href="/"
               to="projects"
-              onClick={() => setMenu(false)}
               spy={true}
               smooth={true}
               offset={-70}
