@@ -43,7 +43,7 @@ function Contact() {
   return (
     <Element
       name="contact"
-      className="flex flex-col w-full items-left mb-20 md:mb-24 font-sans text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[900ms] animate-ease-in"
+      className="flex flex-col w-full items-left mb-20 md:mb-24 font-sans text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[900ms] animate-ease-in"
     >
       <h1 className="text-xl md:text-2xl mb-4 gap-4 font-mono font-medium">
         {lang ? 'CONTÁCTAME' : 'CONTACT ME'}
@@ -58,7 +58,7 @@ function Contact() {
             <input
               autoComplete="off"
               readOnly={sendingEmail !== 0}
-              className={`w-full p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button focus:outline-none focus:border-b-second hover:border-b-second ${
+              className={`w-full p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button-light dark:border-b-button focus:outline-none focus:border-b-second-light dark:focus:border-b-second hover:border-b-second-light dark:hover:border-b-second ${
                 sendingEmail !== 0 ? 'text-gray-400' : ''
               }`}
               placeholder={lang ? 'Nombre' : 'Name'}
@@ -68,7 +68,7 @@ function Contact() {
               })}
             />
             {errors.name && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-sm md:text-base pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-sm md:text-base pointer-events-none font-sans">
                 {errors.name.message}
               </div>
             )}
@@ -78,7 +78,7 @@ function Contact() {
             <input
               autoComplete="off"
               readOnly={sendingEmail !== 0}
-              className={`w-full p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button focus:outline-none focus:border-b-second hover:border-b-second ${
+              className={`w-full p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button-light dark:border-b-button focus:outline-none focus:border-b-second-light dark:focus:border-b-second hover:border-b-second-light dark:hover:border-b-second ${
                 sendingEmail !== 0 ? 'text-gray-400' : ''
               }`}
               placeholder={lang ? 'Correo electrónico' : 'Email'}
@@ -97,7 +97,7 @@ function Contact() {
               })}
             />
             {errors.email && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-sm md:text-base pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-sm md:text-base pointer-events-none font-sans">
                 {errors.email.message}
               </div>
             )}
@@ -107,7 +107,7 @@ function Contact() {
             <textarea
               autoComplete="off"
               readOnly={sendingEmail !== 0}
-              className={`w-full h-40 p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button focus:outline-none focus:border-b-second hover:border-b-second resize-none ${
+              className={`w-full h-40 p-2 bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-button-light dark:border-b-button focus:outline-none focus:border-b-second-light dark:focus:border-b-second hover:border-b-second-light dark:hover:border-b-second resize-none ${
                 sendingEmail !== 0 ? 'text-gray-400' : ''
               }`}
               maxLength={250}
@@ -124,7 +124,7 @@ function Contact() {
               })}
             />
             {errors.message && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-600 text-sm md:text-base pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-sm md:text-base pointer-events-none font-sans">
                 {errors.message.message}
               </div>
             )}
@@ -133,7 +133,7 @@ function Contact() {
           {/* Se muestra el boton correspondiente al estado */}
           {sendingEmail === 0 && (
             <button
-              className="bg-button hover:bg-offset-button hover:ring-2 ring-second duration-300 rounded-lg h-10"
+              className="bg-button-light dark:bg-button hover:bg-offset-button-light dark:hover:bg-offset-button hover:ring-2 ring-second-light dark:ring-second duration-300 rounded-lg h-10"
               type="submit"
             >
               {lang ? 'Enviar' : 'Send'}
@@ -142,7 +142,7 @@ function Contact() {
 
           {sendingEmail === 1 && (
             <button
-              className="bg-offset-button ring-2 ring-second duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2 text-gray-400"
+              className="bg-offset-button-light dark:bg-offset-button ring-2 ring-second-light dark:ring-second duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2 text-gray-600 dark:text-gray-400"
               type="submit"
               disabled={true}
             >
@@ -155,7 +155,7 @@ function Contact() {
 
           {sendingEmail === 2 && (
             <button
-              className="bg-offset-button ring-2 ring-green-700 text-gray-400 duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2"
+              className="bg-offset-button-light dark:bg-offset-button ring-2 ring-green-500 dark:ring-green-700 text-gray-600 dark:text-gray-400 duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2"
               type="submit"
               disabled={true}
             >
@@ -168,7 +168,7 @@ function Contact() {
 
           {sendingEmail === 3 && (
             <button
-              className="bg-offset-button ring-2 ring-red-600 text-red-600 duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2"
+              className="bg-offset-button-light dark:bg-offset-button ring-2 ring-red-600 dark:ring-red-600 text-red-600 dark:text-red-600 duration-300 rounded-lg h-10 flex items-center justify-center align-middle gap-2"
               type="submit"
               disabled={true}
             >
@@ -190,7 +190,7 @@ function Contact() {
             {lang
               ? 'Enviame un mensaje utilizando el formulario o escribime directamente a '
               : 'Send me a message using the form or write to me directly at '}
-            <span className="text-second">tobias.nicolas001@gmail.com</span>
+            <span className="text-second-light dark:text-second">tobias.nicolas001@gmail.com</span>
             {lang
               ? '. Responderé lo más pronto posible.'
               : ". I'll respond as soon as possible."}
@@ -200,9 +200,9 @@ function Contact() {
               href={'https://www.linkedin.com/in/tobiasnicolasn/'}
               target="_blank"
               aria-label="TobiasNicolasN LinkedIn"
-              className="bg-button hover:bg-offset-button ring-second hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
+              className="bg-button-light dark:bg-button hover:bg-offset-button-light dark:hover:bg-offset-button ring-second-light dark:ring-second hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
             >
-              <div className="w-6 h-6">
+              <div className="w-6 h-6 text-gray-800 dark:text-gray-200">
                 <SVGLinkedIn />
               </div>
             </Link>
@@ -210,9 +210,9 @@ function Contact() {
               href={'https://github.com/tobiasNicolasN'}
               target="_blank"
               aria-label="TobiasNicolasN GitHub"
-              className="bg-button hover:bg-offset-button ring-second hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
+              className="bg-button-light dark:bg-button hover:bg-offset-button-light dark:hover:bg-offset-button ring-second-light dark:ring-second-light hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
             >
-              <div className="w-8 h-8">
+              <div className="w-8 h-8 text-gray-800 dark:text-gray-200">
                 <SVGGitHub />
               </div>
             </Link>

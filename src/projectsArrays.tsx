@@ -8,6 +8,7 @@ import SVGNext from '../public/images/nextjs.svg';
 import SVGGit from '../public/images/git.svg';
 import SVGGitHub from '../public/images/github.svg';
 import SVGVite from '../public/images/vite.svg';
+import SVGMongoose from '../public/images/mongoose.svg';
 
 export interface IProjects {
   name: string;
@@ -29,6 +30,7 @@ const cashTracker: IProjects = {
     'node.js',
     'express',
     'mongodb',
+    'mongoose',
     'git',
     'github',
     'vite.js',
@@ -41,6 +43,7 @@ const cashTracker: IProjects = {
     <SVGNodejs key={3} />,
     <SVGExpress key={4} />,
     <SVGMongodb key={5} />,
+    <SVGMongoose key={8} />,
     <SVGGit key={6} />,
     <SVGGitHub key={7} />,
   ],

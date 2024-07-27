@@ -27,20 +27,20 @@ function NavBar() {
     <>
       {/* {Menu para dispositivos moviles} */}
       <div
-        className={`lg:hidden bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
+        className={`lg:hidden bg-button-light dark:bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
           menu
             ? 'w-full h-full top-0 right-0'
             : 'top-2 right-4 md:right-14 w-10 h-10 rounded-xl'
         }`}
       >
         <ul
-          className={`flex flex-col font-sans gap-3 text-xl text-gray-200 ${
+          className={`flex flex-col font-sans gap-3 text-xl text-gray-800 dark:text-gray-200 ${
             menu
               ? 'animate-fade-down animate-once animate-duration-300 animate-delay-500 animate-ease-in'
               : 'hidden'
           }`}
         >
-          <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
+          <li className='bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
               to="about"
@@ -55,7 +55,7 @@ function NavBar() {
               {lang ? 'sobre mi' : 'about me'}
             </Link>
           </li>
-          <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
+          <li className='bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               onClick={() => setMenu(false)}
               href="/"
@@ -69,7 +69,7 @@ function NavBar() {
               {lang ? 'proyectos' : 'projects'}
             </Link>
           </li>
-          <li className='bg-offset-button rounded-lg flex justify-center text-base p-1'>
+          <li className='bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1'>
             <Link
               href="/"
               to="contact"
@@ -88,7 +88,7 @@ function NavBar() {
             <div className="flex gap-4">
               <button
                 onClick={() => setLanguage('spanish')}
-                className={`z-50 text-xs duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-xs duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? 'ring-2' : ''
                 }`}
               >
@@ -97,7 +97,7 @@ function NavBar() {
               </button>
               <button
                 onClick={() => setLanguage('english')}
-                className={`z-50 text-xs duration-200 bg-offset-button ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-xs duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? '' : 'ring-2'
                 }`}
               >
@@ -110,7 +110,7 @@ function NavBar() {
       </div>
       <div
         onClick={() => setMenu(!menu)}
-        className={`lg:hidden bg-button fixed top-2 z-50 rounded-lg right-4 md:right-14 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
+        className={`lg:hidden bg-button-light dark:bg-button fixed top-2 z-50 rounded-lg right-4 md:right-14 w-10 h-10 flex items-center justify-center hover:cursor-pointer ${
           menu ? '' : ''
         }`}
       >
@@ -120,28 +120,28 @@ function NavBar() {
           } `}
         >
           <div
-            className={`w-6 h-[2px] bg-white duration-500 ${
+            className={`w-6 h-[2px] bg-gray-800 dark:bg-gray-200 duration-500 ${
               menu ? 'rotate-45 absolute' : ''
             }`}
           ></div>
           <div
-            className={`w-6 h-[2px] bg-white duration-500 ${
+            className={`w-6 h-[2px] bg-gray-800 dark:bg-gray-200 duration-500 ${
               menu ? '-rotate-45 absolute' : ''
             }`}
           ></div>
           <div
-            className={`w-6 h-[2px] bg-white duration-200 ${menu ? 'hidden' : ''}`}
+            className={`w-6 h-[2px] bg-gray-800 dark:bg-gray-200 duration-200 ${menu ? 'hidden' : ''}`}
           ></div>
         </div>
       </div>
 
-      <div className="w-full py-1 flex flex-col items-center fixed bg-bg top-0 z-40">
-        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-9/12 font-sans text-gray-200">
+      <div className="w-full py-1 flex flex-col items-center fixed bg-bg-light dark:bg-bg top-0 z-40">
+        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-9/12 font-sans text-gray-800 dark:text-gray-200">
           <div className="md:flex md:items-center gap-2">
             <Link
               href="/"
               to=""
-              className="text-xl md:text-2xl font-medium hover:text-offset-second ease-in duration-300"
+              className="text-xl md:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
             >
               TobiasNicolasN
             </Link>
@@ -158,7 +158,7 @@ function NavBar() {
                 duration={500}
               >
                 <span
-                  className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out `}
+                  className={`bg-left-bottom bg-gradient-to-r from-second-light dark:from-second to-second-light dark:to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out `}
                 >
                   <span className="font-semibold">01</span>{' '}
                   {lang ? 'sobre mi' : 'about me'}
@@ -176,7 +176,7 @@ function NavBar() {
                 duration={700}
               >
                 <span
-                  className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
+                  className={`bg-left-bottom bg-gradient-to-r from-second-light dark:from-second to-second-light dark:to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
                 >
                   <span className="font-semibold">02</span>{' '}
                   {lang ? 'proyectos' : 'projects'}
@@ -194,7 +194,7 @@ function NavBar() {
                 duration={700}
               >
                 <span
-                  className={`bg-left-bottom bg-gradient-to-r from-second to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
+                  className={`bg-left-bottom bg-gradient-to-r from-second-light dark:from-second to-second-light dark:to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
                 >
                   <span className="font-semibold">03</span>{' '}
                   {lang ? 'contacto' : 'contact'}

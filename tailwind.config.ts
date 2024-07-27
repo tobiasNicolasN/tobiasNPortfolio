@@ -1,31 +1,48 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     fontFamily: {
       sans: [
-        "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
       ],
-      mono: ["Noe Display", "Georgia", "Times", "serif"]
+      mono: ['Noe Display', 'Georgia', 'Times', 'serif'],
     },
-    extend : {
+    extend: {
       colors: {
-       "second" : "rgb(173 143 255)",
-       "offset-second" : "#e068fd",
-       "button" : "#29293e",
-       "offset-button" : "#374151",
-       "bg" : "#16161a"
-      }
-    }
+        "second": 'rgb(173 143 255)',
+        'offset-second': '#e068fd',
+        "button": '#29293e',
+        'offset-button': '#374151',
+        "bg": '#16161a',
+        'second-light': "rgb(83 29 241)",
+        'offset-second-light': '#6d00e6',
+        'button-light': '#eceeef',
+        'offset-button-light': "#f2f3f5",
+        'bg-light': 'rgb(255, 255, 255)',
+      },
+    },
   },
-  plugins: [
-    require('tailwindcss-animated')
-  ],
+  plugins: [require('tailwindcss-animated')],
 };
 export default config;

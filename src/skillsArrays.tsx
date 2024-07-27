@@ -16,7 +16,7 @@ import vscodeSVG from '../public/images/vscode.svg';
 import gitSVG from '../public/images/git.svg';
 import githubSVG from '../public/images/github.svg';
 import actionsSVG from '../public/images/actions.svg';
-import viteSVG from '../public/images/vite.svg'
+import viteSVG from '../public/images/vite.svg';
 import dockerSVG from '../public/images/docker.svg';
 import graphqlSVG from '../public/images/graphql.svg';
 import jestSVG from '../public/images/jest.svg';
@@ -71,12 +71,12 @@ export const skillsTools: ISkills[] = [
     svg: gitSVG,
   },
   {
-    name: "Vite.js",
-    svg: viteSVG
-  },
-  {
     name: 'GitHub',
     svg: githubSVG,
+  },
+  {
+    name: 'Vite.js',
+    svg: viteSVG,
   },
 ];
 
@@ -94,9 +94,9 @@ export const skillsOthers: ISkills[] = [
     svg: cssSVG,
   },
   {
-      name: 'Figma',
-      svg: figmaSVG,
-    },
+    name: 'Figma',
+    svg: figmaSVG,
+  },
   {
     name: 'Firebase',
     svg: firebaseSVG,
@@ -112,14 +112,6 @@ export const skillsOthers: ISkills[] = [
   {
     name: 'Actions',
     svg: actionsSVG,
-    },
-    {
-    name: 'Docker',
-    svg: dockerSVG,
-  },
-  {
-    name: 'GraphQL',
-    svg: graphqlSVG,
   },
   {
     name: 'Jest',
