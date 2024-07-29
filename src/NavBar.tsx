@@ -13,7 +13,7 @@ function NavBar() {
   const lang = language === 'spanish';
   const [menu, setMenu] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false);
-  const { setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme, systemTheme } = useTheme();
 
   // Desactiva el scroll de la pagina cuando se abre el menu
   useEffect(() => {
@@ -31,6 +31,10 @@ function NavBar() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    setTheme('system');
+  }, [systemTheme]);
 
   return (
     <>
