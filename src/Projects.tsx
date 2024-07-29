@@ -15,7 +15,7 @@ function Projects({projects}: IProjectsProps) {
         {projects.map((data, index) => (
           <div
           key={index}
-            className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:w-1/3 hover:bg-opacity-100 hover:scale-105 duration-300 cursor-pointer"
+            className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:w-1/2 hover:bg-opacity-100 hover:scale-105 duration-300 cursor-pointer"
           >
             <div className="w-full p-4 flex flex-col font-mono gap-2 text-left">
               <h1 className="text-xl text-gray-800 dark:text-gray-200 tracking-wide">{data.name}</h1>

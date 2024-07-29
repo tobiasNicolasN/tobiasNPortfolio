@@ -66,7 +66,7 @@ function NavBar() {
               : 'hidden'
           }`}
         >
-          <li className="bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+          <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
             <Link
               href="/"
               to="about"
@@ -81,7 +81,7 @@ function NavBar() {
               {lang ? 'sobre mi' : 'about me'}
             </Link>
           </li>
-          <li className="bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+          <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
             <Link
               onClick={() => setMenu(false)}
               href="/"
@@ -95,7 +95,7 @@ function NavBar() {
               {lang ? 'proyectos' : 'projects'}
             </Link>
           </li>
-          <li className="bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+          <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
             <Link
               href="/"
               to="contact"
@@ -114,7 +114,7 @@ function NavBar() {
             <div className="flex gap-4">
               <button
                 onClick={() => setLanguage('spanish')}
-                className={`z-50 text-xs duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-xs duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? 'ring-2' : ''
                 }`}
               >
@@ -122,7 +122,7 @@ function NavBar() {
               </button>
               <button
                 onClick={() => setLanguage('english')}
-                className={`z-50 text-xs duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-xs duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? '' : 'ring-2'
                 }`}
               >
@@ -134,7 +134,7 @@ function NavBar() {
             <li>
               <div className="flex flex-wrap gap-4">
                 <button
-                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
+                  className={`z-50 duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
                     systemMode === 'false' && resolvedTheme === 'dark' ? 'ring-2' : ''
                   }`}
                   onClick={() => {setTheme('dark'), updateSystemMode("false")}}
@@ -144,7 +144,7 @@ function NavBar() {
                   </div>
                 </button>
                 <button
-                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
+                  className={`z-50 duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
                     systemMode === 'true' ? 'ring-2' : ''
                   }`}
                   onClick={() => {setTheme('system'), updateSystemMode("true")}}
@@ -154,7 +154,7 @@ function NavBar() {
                   </div>
                 </button>
                 <button
-                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
+                  className={`z-50 duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
                     systemMode === 'false' && resolvedTheme !== 'dark'
                       ? 'ring-2'
                       : ''
@@ -202,12 +202,12 @@ function NavBar() {
       </div>
 
       <div className="w-full py-1 flex flex-col items-center fixed bg-bg-light dark:bg-bg top-0 z-40">
-        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-9/12 font-sans text-gray-800 dark:text-gray-200">
+        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-10/12 font-sans text-gray-800 dark:text-gray-200">
           <div className="md:flex md:items-center gap-2">
             <Link
               href="/"
               to=""
-              className="text-xl md:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
+              className="text-xl md:text-2xl lg:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
             >
               TobiasNicolasN
             </Link>

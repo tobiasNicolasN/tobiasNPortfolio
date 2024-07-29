@@ -1,5 +1,5 @@
 'use client';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import SVGDark from '../public/images/dark.svg';
 import SVGLight from '../public/images/light.svg';
 import SVGSystem from '../public/images/system.svg';
@@ -33,6 +33,7 @@ function ThemeDropDown({ systemMode, updateSystemMode }: IThemeDropDownProps) {
       <button
         className="z-50 duration-300 bg-button-light dark:bg-button hover:ring-2 hover:ring-second-light dark:hover:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group"
         id="myButton"
+        aria-label="Toggle theme"
       >
         <div className="w-[30.1px]" style={{ aspectRatio: '16/9' }}>
           {resolvedTheme === 'dark' ? <SVGDark /> : <SVGLight />}
@@ -64,6 +65,7 @@ function ThemeDropDown({ systemMode, updateSystemMode }: IThemeDropDownProps) {
           <ul className="py-2">
             <li>
               <button
+                aria-label="Toggle theme"
                 onClick={() => {
                   setTheme(resolvedTheme === 'dark' ? 'light' : 'dark'),
                     updateSystemMode('false'),
@@ -78,6 +80,7 @@ function ThemeDropDown({ systemMode, updateSystemMode }: IThemeDropDownProps) {
             </li>
             <li>
               <button
+                aria-label="Toggle theme"
                 onClick={() => {
                   setTheme('system'),
                     updateSystemMode('true'),

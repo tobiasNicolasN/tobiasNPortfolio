@@ -45,11 +45,11 @@ function Contact() {
       name="contact"
       className="flex flex-col w-full items-left mb-20 md:mb-24 font-sans text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-[900ms] animate-ease-in"
     >
-      <h1 className="text-xl md:text-2xl mb-4 gap-4 font-mono font-medium">
+      <h1 className="text-xl md:text-2xl lg:text-3xl mb-4 gap-4 font-mono font-medium">
         {lang ? 'CONTÁCTAME' : 'CONTACT ME'}
       </h1>
 
-      <div className="flex flex-col-reverse lg:flex lg:flex-row md:gap-6 w-full md:text-base">
+      <div className="flex flex-col-reverse lg:flex lg:flex-row md:gap-6 w-full md:text-base lg:text-lg">
         <form
           className="flex flex-col gap-5 mt-6 lg:w-1/2"
           onSubmit={handleSubmit(onSubmit)}
@@ -180,7 +180,7 @@ function Contact() {
           )}
         </form>
 
-        <div className="flex flex-col md:p-2 lg:w-1/2 gap-2 text-sm md:text-base">
+        <div className="flex flex-col md:p-2 lg:w-1/2 gap-2 text-sm md:text-base lg:text-lg">
           <h1>
             {lang
               ? 'En busqueda de nuevas oportunidades, retos y colaboraciones. Si tenés algún proyecto en mente o una oferta de trabajo, enviame un correo.'
