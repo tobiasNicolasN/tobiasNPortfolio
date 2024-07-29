@@ -4,11 +4,16 @@ import { useLang } from '@/context/LanguageContext';
 import { Link } from 'react-scroll';
 import DropDown from './DropDown';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+import SVGDark from '../public/images/dark.svg';
+import SVGLight from '../public/images/light.svg';
 
 function NavBar() {
   const { language, setLanguage } = useLang();
   const lang = language === 'spanish';
   const [menu, setMenu] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
 
   // Desactiva el scroll de la pagina cuando se abre el menu
   useEffect(() => {
@@ -22,6 +27,10 @@ function NavBar() {
       document.body.style.overflow = 'auto'; // Asegura que se reactive el scroll al desmontar
     };
   }, [menu]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -40,7 +49,7 @@ function NavBar() {
               : 'hidden'
           }`}
         >
-          <li className='bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1'>
+          <li className="bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
             <Link
               href="/"
               to="about"
@@ -55,7 +64,7 @@ function NavBar() {
               {lang ? 'sobre mi' : 'about me'}
             </Link>
           </li>
-          <li className='bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1'>
+          <li className="bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
             <Link
               onClick={() => setMenu(false)}
               href="/"
@@ -69,7 +78,7 @@ function NavBar() {
               {lang ? 'proyectos' : 'projects'}
             </Link>
           </li>
-          <li className='bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1'>
+          <li className="bg-offset-button-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
             <Link
               href="/"
               to="contact"
@@ -92,7 +101,6 @@ function NavBar() {
                   lang ? 'ring-2' : ''
                 }`}
               >
-                
                 ESPAÑOL
               </button>
               <button
@@ -101,11 +109,38 @@ function NavBar() {
                   lang ? '' : 'ring-2'
                 }`}
               >
-                
                 ENGLISH
               </button>
             </div>
           </li>
+          {mounted ? (
+            <li>
+              <div className="flex gap-4">
+                <button
+                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center ${
+                    resolvedTheme === 'dark' ? 'ring-2' : ''
+                  }`}
+                  onClick={() => setTheme('dark')}
+                >
+                  <div className="w-4 h-4">
+                    <SVGDark />
+                  </div>
+                </button>
+                <button
+                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center ${
+                    resolvedTheme === 'dark' ? '' : 'ring-2'
+                  }`}
+                  onClick={() => setTheme('light')}
+                >
+                  <div className="w-4 h-4">
+                    <SVGLight />
+                  </div>
+                </button>
+              </div>
+            </li>
+          ) : (
+            ''
+          )}
         </ul>
       </div>
       <div
@@ -130,7 +165,9 @@ function NavBar() {
             }`}
           ></div>
           <div
-            className={`w-6 h-[2px] bg-gray-800 dark:bg-gray-200 duration-200 ${menu ? 'hidden' : ''}`}
+            className={`w-6 h-[2px] bg-gray-800 dark:bg-gray-200 duration-200 ${
+              menu ? 'hidden' : ''
+            }`}
           ></div>
         </div>
       </div>
