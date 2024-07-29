@@ -7,13 +7,16 @@ import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import SVGDark from '../public/images/dark.svg';
 import SVGLight from '../public/images/light.svg';
+import SVGSystem from '../public/images/system.svg';
+import ThemeDropDown from './ThemeDropDown';
 
 function NavBar() {
   const { language, setLanguage } = useLang();
   const lang = language === 'spanish';
   const [menu, setMenu] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false);
-  const { setTheme, resolvedTheme, systemTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [systemMode, setSystemMode] = useState<string>('true'); // Valor por defecto
 
   // Desactiva el scroll de la pagina cuando se abre el menu
   useEffect(() => {
@@ -29,12 +32,22 @@ function NavBar() {
   }, [menu]);
 
   useEffect(() => {
+    const storedMode = localStorage.getItem('systemMode');
+    if (!storedMode) {
+      // Si no hay valor en localStorage, establece el systemMode para el tema
+      localStorage.setItem('systemMode', 'true');
+      setSystemMode('true');
+    } else {
+      setSystemMode(storedMode);
+    }
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    setTheme('system');
-  }, [systemTheme]);
+  // Función para actualizar el sistemaMode
+  const updateSystemMode = (value: string) => {
+    localStorage.setItem('systemMode', value);
+    setSystemMode(value);
+  };
 
   return (
     <>
@@ -119,22 +132,34 @@ function NavBar() {
           </li>
           {mounted ? (
             <li>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <button
-                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center ${
-                    resolvedTheme === 'dark' ? 'ring-2' : ''
+                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
+                    systemMode === 'false' && resolvedTheme === 'dark' ? 'ring-2' : ''
                   }`}
-                  onClick={() => setTheme('dark')}
+                  onClick={() => {setTheme('dark'), updateSystemMode("false")}}
                 >
                   <div className="w-4 h-4">
                     <SVGDark />
                   </div>
                 </button>
                 <button
-                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center ${
-                    resolvedTheme === 'dark' ? '' : 'ring-2'
+                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
+                    systemMode === 'true' ? 'ring-2' : ''
                   }`}
-                  onClick={() => setTheme('light')}
+                  onClick={() => {setTheme('system'), updateSystemMode("true")}}
+                >
+                  <div className={`w-4 h-4 flex items-center`}>
+                    <SVGSystem />
+                  </div>
+                </button>
+                <button
+                  className={`z-50 duration-200 bg-offset-button-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
+                    systemMode === 'false' && resolvedTheme !== 'dark'
+                      ? 'ring-2'
+                      : ''
+                  }`}
+                  onClick={() => {setTheme('light'), updateSystemMode("false")}}
                 >
                   <div className="w-4 h-4">
                     <SVGLight />
@@ -244,6 +269,12 @@ function NavBar() {
             </li>
             <li>
               <DropDown />
+            </li>
+            <li>
+              <ThemeDropDown
+                updateSystemMode={updateSystemMode}
+                systemMode={systemMode}
+              />
             </li>
           </ul>
         </div>
