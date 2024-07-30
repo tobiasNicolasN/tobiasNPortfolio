@@ -202,7 +202,7 @@ function NavBar() {
       </div>
 
       <div className="w-full py-1 flex flex-col items-center fixed bg-bg-light dark:bg-bg top-0 z-40">
-        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-10/12 font-sans text-gray-800 dark:text-gray-200">
+        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-10/12 xl:w-9/12 2xl:w-7/12 font-sans text-gray-800 dark:text-gray-200">
           <div className="md:flex md:items-center gap-2">
             <Link
               href="/"
@@ -274,6 +274,7 @@ function NavBar() {
               <ThemeDropDown
                 updateSystemMode={updateSystemMode}
                 systemMode={systemMode}
+                mounted={mounted}
               />
             </li>
           </ul>

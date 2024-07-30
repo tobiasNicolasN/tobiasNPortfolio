@@ -7,10 +7,11 @@ import { useTheme } from 'next-themes';
 
 interface IThemeDropDownProps {
   systemMode: string;
+  mounted: boolean
   updateSystemMode: (value: string) => void;
 }
 
-function ThemeDropDown({ systemMode, updateSystemMode }: IThemeDropDownProps) {
+function ThemeDropDown({ systemMode, updateSystemMode, mounted }: IThemeDropDownProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,7 +37,10 @@ function ThemeDropDown({ systemMode, updateSystemMode }: IThemeDropDownProps) {
         aria-label="Toggle theme"
       >
         <div className="w-[30.1px]" style={{ aspectRatio: '16/9' }}>
-          {resolvedTheme === 'dark' ? <SVGDark /> : <SVGLight />}
+        {
+          (mounted) ? resolvedTheme === 'dark' ? <SVGDark /> : <SVGLight /> : <div className='text-gray-800 dark:text-gray-200'><SVGSystem/></div>
+        }
+          
         </div>
         <span className="group-hover:text-second-light dark:group-hover:text-second duration-300">
           <svg

@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss';
+import { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   darkMode: 'class',
@@ -30,19 +31,33 @@ const config: Config = {
     },
     extend: {
       colors: {
-        "second": 'rgb(173 143 255)',
+        second: 'rgb(173 143 255)',
         'offset-second': '#e068fd',
-        "button": '#29293e',
+        button: '#29293e',
         'offset-button': '#374151',
-        "bg": '#16161a',
-        'second-light': "rgb(83 29 241)",
+        bg: '#16161a',
+        'second-light': 'rgb(83 29 241)',
         'offset-second-light': '#6d00e6',
         'button-light': '#eceeef',
-        'offset-button-light': "#f2f3f5",
+        'offset-button-light': '#f2f3f5',
         'bg-light': 'rgb(255, 255, 255)',
       },
     },
   },
-  plugins: [require('tailwindcss-animated')],
+  plugins: [
+    require('tailwindcss-animated'),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none' /* IE and Edge */,
+          'scrollbar-width': 'none' /* Firefox */,
+        },
+        '.no-scrollbar::-webkit-scrollbar': {
+          display: 'none' /* Safari and Chrome */,
+        },
+      });
+    }),
+  ],
 };
+
 export default config;

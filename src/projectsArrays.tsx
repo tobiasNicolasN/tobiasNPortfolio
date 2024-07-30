@@ -50,7 +50,7 @@ const cashTracker: IProjects = {
 };
 
 const portfolio: IProjects = {
-  name: 'Portfolio personal',
+  name: 'Portfolio',
   description: [
     'Mi portafolio refleja un enfoque minimalista, destacando mis proyectos y habilidades. Ofrece una experiencia visual moderna y fluida, asegurando accesibilidad y profesionalismo.',
     'My portfolio showcases a minimalist approach, highlighting my projects and skills. It offers a modern, seamless visual experience, ensuring accessibility and professionalism.',

@@ -11,6 +11,7 @@
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/react-scroll": "^1.8.10",
+    "@types/tailwindcss": "^3.1.0",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
     "react": "^18",
