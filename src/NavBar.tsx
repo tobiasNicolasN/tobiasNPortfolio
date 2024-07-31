@@ -9,6 +9,8 @@ import SVGDark from '../public/images/dark.svg';
 import SVGLight from '../public/images/light.svg';
 import SVGSystem from '../public/images/system.svg';
 import ThemeDropDown from './ThemeDropDown';
+import { usePathname } from 'next/navigation';
+import LinkNext from 'next/link'
 
 function NavBar() {
   const { language, setLanguage } = useLang();
@@ -17,6 +19,8 @@ function NavBar() {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const [systemMode, setSystemMode] = useState<string>('true'); // Valor por defecto
+  const pathname = usePathname()
+  const isHome = pathname === "/"
 
   // Desactiva el scroll de la pagina cuando se abre el menu
   useEffect(() => {
@@ -204,16 +208,15 @@ function NavBar() {
       <div className="w-full py-1 flex flex-col items-center fixed bg-bg-light dark:bg-bg top-0 z-40">
         <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-10/12 xl:w-9/12 2xl:w-7/12 font-sans text-gray-800 dark:text-gray-200">
           <div className="md:flex md:items-center gap-2">
-            <Link
+            <LinkNext
               href="/"
-              to=""
               className="text-xl md:text-2xl lg:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
             >
               TobiasNicolasN
-            </Link>
+            </LinkNext>
           </div>
           <ul className="hidden lg:flex items-center justify-center gap-4">
-            <li>
+            <li className={isHome ? "" : "hidden"}>
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
                 href="/"
@@ -231,7 +234,7 @@ function NavBar() {
                 </span>
               </Link>
             </li>
-            <li>
+            <li className={isHome ? "" : "hidden"}>
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
                 href="/"
@@ -249,7 +252,7 @@ function NavBar() {
                 </span>
               </Link>
             </li>
-            <li>
+            <li className={isHome ? "" : "hidden"}>
               <Link
                 className="group transition-all ease-in-out text-xl"
                 href="/"

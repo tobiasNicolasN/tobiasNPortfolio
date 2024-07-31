@@ -66,4 +66,5 @@ const portfolio: IProjects = {
   ],
 };
 
+// 0 portfolio, 1 cashTracker
 export const projects: IProjects[] = [portfolio, cashTracker];

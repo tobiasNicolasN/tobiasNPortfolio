@@ -1,6 +1,7 @@
 'use client';
 import { useLang } from '@/context/LanguageContext';
 import { IProjects } from './projectsArrays';
+import Link from 'next/link';
 
 interface IProjectsProps{
   projects: IProjects[]
@@ -13,7 +14,7 @@ function Projects({projects}: IProjectsProps) {
   return (
       <div className={`flex flex-col lg:flex-row gap-6 duration-300 mt-6`}>
         {projects.map((data, index) => (
-          <div
+          <Link href={`/${data.name.toLocaleLowerCase()}`}
           key={index}
             className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:w-1/2 hover:bg-opacity-100 hover:scale-105 duration-300 cursor-pointer"
           >
@@ -30,7 +31,7 @@ function Projects({projects}: IProjectsProps) {
                   {lang ? data.description[0] : data.description[1]}
                 </h1>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
   );
