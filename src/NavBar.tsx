@@ -10,7 +10,7 @@ import SVGLight from '../public/images/light.svg';
 import SVGSystem from '../public/images/system.svg';
 import ThemeDropDown from './ThemeDropDown';
 import { usePathname } from 'next/navigation';
-import LinkNext from 'next/link'
+import LinkNext from 'next/link';
 
 function NavBar() {
   const { language, setLanguage } = useLang();
@@ -19,8 +19,8 @@ function NavBar() {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const [systemMode, setSystemMode] = useState<string>('true'); // Valor por defecto
-  const pathname = usePathname()
-  const isHome = pathname === "/"
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   // Desactiva el scroll de la pagina cuando se abre el menu
   useEffect(() => {
@@ -70,50 +70,62 @@ function NavBar() {
               : 'hidden'
           }`}
         >
-          <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
-            <Link
-              href="/"
-              to="about"
-              onClick={() => setMenu(false)}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              {' '}
-              <span className="font-semibold">01</span>{' '}
-              {lang ? 'sobre mi' : 'about me'}
-            </Link>
-          </li>
-          <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
-            <Link
-              onClick={() => setMenu(false)}
-              href="/"
-              to="projects"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <span className="font-semibold">02</span>{' '}
-              {lang ? 'proyectos' : 'projects'}
-            </Link>
-          </li>
-          <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
-            <Link
-              href="/"
-              to="contact"
-              onClick={() => setMenu(false)}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              {' '}
-              <span className="font-semibold">03</span>{' '}
-              {lang ? 'contacto' : 'contact'}
-            </Link>
-          </li>
+          {isHome ? (
+            <>
+              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+                <Link
+                  href="/"
+                  to="about"
+                  onClick={() => setMenu(false)}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  {' '}
+                  <span className="font-semibold">01</span>{' '}
+                  {lang ? 'sobre mi' : 'about me'}
+                </Link>
+              </li>
+              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+                <Link
+                  onClick={() => setMenu(false)}
+                  href="/"
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <span className="font-semibold">02</span>{' '}
+                  {lang ? 'proyectos' : 'projects'}
+                </Link>
+              </li>
+              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+                <Link
+                  href="/"
+                  to="contact"
+                  onClick={() => setMenu(false)}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  {' '}
+                  <span className="font-semibold">03</span>{' '}
+                  {lang ? 'contacto' : 'contact'}
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+              <LinkNext href="/" >
+                {' '}
+                <span className="font-semibold">01</span>{' '}
+                {lang ? 'inicio' : 'home'}
+              </LinkNext>
+            </li>
+          )}
           <li>
             <div className="flex gap-4">
               <button
@@ -139,9 +151,13 @@ function NavBar() {
               <div className="flex flex-wrap gap-4">
                 <button
                   className={`z-50 duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
-                    systemMode === 'false' && resolvedTheme === 'dark' ? 'ring-2' : ''
+                    systemMode === 'false' && resolvedTheme === 'dark'
+                      ? 'ring-2'
+                      : ''
                   }`}
-                  onClick={() => {setTheme('dark'), updateSystemMode("false")}}
+                  onClick={() => {
+                    setTheme('dark'), updateSystemMode('false');
+                  }}
                 >
                   <div className="w-4 h-4">
                     <SVGDark />
@@ -151,7 +167,9 @@ function NavBar() {
                   className={`z-50 duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg w-[69.2px] px-3 p-2 inline-flex items-center justify-center ${
                     systemMode === 'true' ? 'ring-2' : ''
                   }`}
-                  onClick={() => {setTheme('system'), updateSystemMode("true")}}
+                  onClick={() => {
+                    setTheme('system'), updateSystemMode('true');
+                  }}
                 >
                   <div className={`w-4 h-4 flex items-center`}>
                     <SVGSystem />
@@ -163,7 +181,9 @@ function NavBar() {
                       ? 'ring-2'
                       : ''
                   }`}
-                  onClick={() => {setTheme('light'), updateSystemMode("false")}}
+                  onClick={() => {
+                    setTheme('light'), updateSystemMode('false');
+                  }}
                 >
                   <div className="w-4 h-4">
                     <SVGLight />
@@ -216,7 +236,7 @@ function NavBar() {
             </LinkNext>
           </div>
           <ul className="hidden lg:flex items-center justify-center gap-4">
-            <li className={isHome ? "" : "hidden"}>
+            <li className={isHome ? '' : 'hidden'}>
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
                 href="/"
@@ -234,7 +254,7 @@ function NavBar() {
                 </span>
               </Link>
             </li>
-            <li className={isHome ? "" : "hidden"}>
+            <li className={isHome ? '' : 'hidden'}>
               <Link
                 className="group transition-all duration-200 ease-in-out text-xl"
                 href="/"
@@ -252,7 +272,7 @@ function NavBar() {
                 </span>
               </Link>
             </li>
-            <li className={isHome ? "" : "hidden"}>
+            <li className={isHome ? '' : 'hidden'}>
               <Link
                 className="group transition-all ease-in-out text-xl"
                 href="/"
