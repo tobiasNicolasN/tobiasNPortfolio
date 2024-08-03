@@ -31,11 +31,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        second: 'rgb(173 143 255)',
+        "second": 'rgb(173 143 255)',
         'offset-second': '#e068fd',
-        button: '#29293e',
+        "button": '#29293e',
         'offset-button': '#374151',
-        bg: '#16161a',
+        "bg": '#16161a',
         'second-light': 'rgb(83 29 241)',
         'offset-second-light': '#6d00e6',
         'button-light': '#eceeef',

@@ -7,11 +7,15 @@ import { useTheme } from 'next-themes';
 
 interface IThemeDropDownProps {
   systemMode: string;
-  mounted: boolean
+  mounted: boolean;
   updateSystemMode: (value: string) => void;
 }
 
-function ThemeDropDown({ systemMode, updateSystemMode, mounted }: IThemeDropDownProps) {
+function ThemeDropDown({
+  systemMode,
+  updateSystemMode,
+  mounted,
+}: IThemeDropDownProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,10 +41,17 @@ function ThemeDropDown({ systemMode, updateSystemMode, mounted }: IThemeDropDown
         aria-label="Toggle theme"
       >
         <div className="w-[30.1px]" style={{ aspectRatio: '16/9' }}>
-        {
-          (mounted) ? resolvedTheme === 'dark' ? <SVGDark /> : <SVGLight /> : <div className='text-gray-800 dark:text-gray-200'><SVGSystem/></div>
-        }
-          
+          {mounted ? (
+            resolvedTheme === 'dark' ? (
+              <SVGDark />
+            ) : (
+              <SVGLight />
+            )
+          ) : (
+            <div className="text-gray-800 dark:text-gray-200">
+              <SVGSystem />
+            </div>
+          )}
         </div>
         <span className="group-hover:text-second-light dark:group-hover:text-second duration-300">
           <svg
@@ -71,14 +82,27 @@ function ThemeDropDown({ systemMode, updateSystemMode, mounted }: IThemeDropDown
               <button
                 aria-label="Toggle theme"
                 onClick={() => {
-                  setTheme(resolvedTheme === 'dark' ? 'light' : 'dark'),
+                  setTheme('dark'), updateSystemMode('false'), setIsOpen(false);
+                }}
+                className="px-4 py-2 w-full hover:bg-offset-button-light dark:hover:bg-gray-700 inline-flex items-center justify-center"
+              >
+                <div className={`w-[30.1px] ${systemMode === "false" && resolvedTheme === "dark" ? "text-second-light dark:text-second" : ""}`} style={{ aspectRatio: '16/9' }}>
+                  <SVGDark />
+                </div>
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Toggle theme"
+                onClick={() => {
+                  setTheme('light'),
                     updateSystemMode('false'),
                     setIsOpen(false);
                 }}
                 className="px-4 py-2 w-full hover:bg-offset-button-light dark:hover:bg-gray-700 inline-flex items-center justify-center"
               >
-                <div className="w-[30.1px]" style={{ aspectRatio: '16/9' }}>
-                  {resolvedTheme !== 'dark' ? <SVGDark /> : <SVGLight />}
+                <div className={`w-[30.1px] ${systemMode === "false" && resolvedTheme === "light" ? "text-second-light dark:text-second" : ""}`} style={{ aspectRatio: '16/9' }}>
+                  <SVGLight />
                 </div>
               </button>
             </li>
