@@ -11,14 +11,10 @@ import expressSVG from '../public/images/express.svg';
 import firebaseSVG from '../public/images/firebase.svg';
 import mongodbSVG from '../public/images/mongodb.svg';
 import mongooseSVG from '../public/images/mongoose.svg';
-import npmSVG from '../public/images/npm.svg';
-import vscodeSVG from '../public/images/vscode.svg';
 import gitSVG from '../public/images/git.svg';
 import githubSVG from '../public/images/github.svg';
 import actionsSVG from '../public/images/actions.svg';
 import viteSVG from '../public/images/vite.svg';
-import dockerSVG from '../public/images/docker.svg';
-import graphqlSVG from '../public/images/graphql.svg';
 import jestSVG from '../public/images/jest.svg';
 
 // Contiene el nombre de la habilidad y su respectiva svg
@@ -102,14 +98,6 @@ export const skillsOthers: ISkills[] = [
     svg: firebaseSVG,
   },
   {
-    name: 'NPM',
-    svg: npmSVG,
-  },
-  {
-    name: 'VS Code',
-    svg: vscodeSVG,
-  },
-  {
     name: 'Actions',
     svg: actionsSVG,
   },
@@ -117,4 +105,12 @@ export const skillsOthers: ISkills[] = [
     name: 'Jest',
     svg: jestSVG,
   },
+  // {
+  //   name: 'NPM',
+  //   svg: npmSVG,
+  // },
+  // {
+  //   name: 'VS Code',
+  //   svg: vscodeSVG,
+  // },
 ];

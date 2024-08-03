@@ -55,6 +55,73 @@ function NavBar() {
 
   return (
     <>
+      <div className="w-full py-1 flex flex-col items-center fixed bg-bg-light dark:bg-bg top-0 z-40">
+        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-10/12 xl:w-9/12 2xl:w-7/12 font-sans text-gray-800 dark:text-gray-200">
+          <div className="md:flex md:items-center gap-2">
+            <LinkNext
+              href="/"
+              className="text-xl md:text-2xl lg:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
+            >
+              TobiasNicolasN
+            </LinkNext>
+          </div>
+          <ul className="hidden lg:flex items-center justify-center gap-4">
+            <li className={isHome ? '' : 'hidden'}>
+              <Link
+                className="group transition-all duration-500 ease-in-out text-xl hover:text-second-light dark:hover:text-second"
+                href="/"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <span className="font-semibold">01</span>{' '}
+                {lang ? 'sobre mi' : 'about me'}
+              </Link>
+            </li>
+            <li className={isHome ? '' : 'hidden'}>
+              <Link
+                className="group transition-all duration-500 ease-in-out text-xl hover:text-second-light dark:hover:text-second"
+                href="/"
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={700}
+              >
+                <span className="font-semibold">02</span>{' '}
+                {lang ? 'proyectos' : 'projects'}
+              </Link>
+            </li>
+            <li className={isHome ? '' : 'hidden'}>
+              <Link
+                className="group transition-500 ease-in-out text-xl hover:text-second-light dark:hover:text-second"
+                href="/"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={700}
+              >
+                <span className="font-semibold">03</span>{' '}
+                {lang ? 'contacto' : 'contact'}
+              </Link>
+            </li>
+            <li>
+              <DropDown />
+            </li>
+            <li>
+              <ThemeDropDown
+                updateSystemMode={updateSystemMode}
+                systemMode={systemMode}
+                mounted={mounted}
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+
       {/* {Menu para dispositivos moviles} */}
       <div
         className={`lg:hidden bg-button-light dark:bg-button fixed duration-500 z-50 flex items-center text-left justify-center ${
@@ -119,7 +186,7 @@ function NavBar() {
             </>
           ) : (
             <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
-              <LinkNext href="/" >
+              <LinkNext href="/">
                 {' '}
                 <span className="font-semibold">01</span>{' '}
                 {lang ? 'inicio' : 'home'}
@@ -222,85 +289,6 @@ function NavBar() {
               menu ? 'hidden' : ''
             }`}
           ></div>
-        </div>
-      </div>
-
-      <div className="w-full py-1 flex flex-col items-center fixed bg-bg-light dark:bg-bg top-0 z-40">
-        <div className="flex md:justify-between md:items-center mt-2 mb-2 w-11/12 md:w-10/12 lg:w-10/12 xl:w-9/12 2xl:w-7/12 font-sans text-gray-800 dark:text-gray-200">
-          <div className="md:flex md:items-center gap-2">
-            <LinkNext
-              href="/"
-              className="text-xl md:text-2xl lg:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
-            >
-              TobiasNicolasN
-            </LinkNext>
-          </div>
-          <ul className="hidden lg:flex items-center justify-center gap-4">
-            <li className={isHome ? '' : 'hidden'}>
-              <Link
-                className="group transition-all duration-200 ease-in-out text-xl"
-                href="/"
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                <span
-                  className={`bg-left-bottom bg-gradient-to-r from-second-light dark:from-second to-second-light dark:to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out `}
-                >
-                  <span className="font-semibold">01</span>{' '}
-                  {lang ? 'sobre mi' : 'about me'}
-                </span>
-              </Link>
-            </li>
-            <li className={isHome ? '' : 'hidden'}>
-              <Link
-                className="group transition-all duration-200 ease-in-out text-xl"
-                href="/"
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={700}
-              >
-                <span
-                  className={`bg-left-bottom bg-gradient-to-r from-second-light dark:from-second to-second-light dark:to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
-                >
-                  <span className="font-semibold">02</span>{' '}
-                  {lang ? 'proyectos' : 'projects'}
-                </span>
-              </Link>
-            </li>
-            <li className={isHome ? '' : 'hidden'}>
-              <Link
-                className="group transition-all ease-in-out text-xl"
-                href="/"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={700}
-              >
-                <span
-                  className={`bg-left-bottom bg-gradient-to-r from-second-light dark:from-second to-second-light dark:to-second bg-[length:0%_2px] bg-no-repeat transition-all duration-700 ease-out`}
-                >
-                  <span className="font-semibold">03</span>{' '}
-                  {lang ? 'contacto' : 'contact'}
-                </span>
-              </Link>
-            </li>
-            <li>
-              <DropDown />
-            </li>
-            <li>
-              <ThemeDropDown
-                updateSystemMode={updateSystemMode}
-                systemMode={systemMode}
-                mounted={mounted}
-              />
-            </li>
-          </ul>
         </div>
       </div>
     </>
