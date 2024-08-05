@@ -40,10 +40,10 @@ export default function CashTracker() {
             CashTracker
           </h1>
 
-          <div className="flex mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <div className="flex lg:mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <div className="flex bg-offset-button-light dark:bg-button rounded-lg">
               {projects[0].svg.map((svg, index) => (
-                <div key={index} className="p-3">
+                <div key={index} className="p-2 lg:p-3">
                   <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
                     {svg}
                   </div>
@@ -77,7 +77,7 @@ export default function CashTracker() {
                   className="text-second-light hover:text-offset-second-light dark:text-second dark:hover:text-offset-second underline"
                 >
                   Express.js
-                </a>{' '}
+                </a>
                 , configurado con CORS para permitir solicitudes desde el origen
                 especificado, con soporte para credenciales. La base de datos es{' '}
                 <a
