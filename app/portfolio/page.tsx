@@ -24,7 +24,7 @@ export default function Portfolio() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="3"
+              strokeWidth="2"
               stroke="currentColor"
               className="w-6 h-6"
             >
@@ -39,18 +39,19 @@ export default function Portfolio() {
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             Portfolio
           </h1>
-          <div className="flex gap-4 mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in  ">
-            {projects[0].svg.map((svg, index) => (
-              <div
-                key={index}
-                className="bg-button-light dark:bg-button p-2 rounded-lg"
-              >
-                <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
-                  {svg}
+
+          <div className="flex lg:mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+            <div className="flex bg-offset-button-light dark:bg-button rounded-lg">
+              {projects[0].svg.map((svg, index) => (
+                <div key={index} className="p-2 lg:p-3">
+                  <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
+                    {svg}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
           <div className="flex gap-4 mt-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <Link
               className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 hover:bg-offset-button-light dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-base lg:text-lg xl:text-xl"
@@ -70,17 +71,17 @@ export default function Portfolio() {
           <h1 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? 'Diseño y Experiencia' : 'Design and Experience'}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang
               ? 'En este proyecto, busqué un enfoque minimalista, centrado en la simplicidad y la usabilidad. Incluye:'
               : 'In this project, I adopted a minimalist approach, focusing on simplicity and usability. It includes:'}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang
               ? 'Filtro de Proyectos: Se implementó un filtro basado en tecnologías, permitiendo a los usuarios buscar y visualizar fácilmente los proyectos que utilizan las tecnologías de su interés.'
               : 'Project Filter: A technology-based filter was implemented, enabling users to easily search and view projects that use the technologies of their interest.'}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Cambio de Idioma: Visualización en inglés o español, con un
@@ -109,7 +110,7 @@ export default function Portfolio() {
               </>
             )}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Modos Claro y Oscuro: Implementados con{' '}
@@ -137,12 +138,12 @@ export default function Portfolio() {
               </>
             )}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang
               ? 'Modo de Dispositivo: Detecta el tema por defecto del sistema del usuario.'
               : 'Device Mode: Detects the user’s default system theme.'}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 El diseño está construido con{' '}
@@ -175,7 +176,7 @@ export default function Portfolio() {
           <h1 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? 'Formulario de Envío de Correos' : 'Email Submission Form'}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Los correos electrónicos enviados desde la página son creados
@@ -237,7 +238,7 @@ export default function Portfolio() {
               </>
             )}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 El manejo de errores para el envío de correos electrónicos se
@@ -275,7 +276,7 @@ export default function Portfolio() {
               ? 'Hosting y Configuración de Dominio'
               : 'Hosting and Domain Configuration'}
           </h1>
-          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Desplegado utilizando{' '}

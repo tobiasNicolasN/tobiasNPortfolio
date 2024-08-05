@@ -24,7 +24,7 @@ export default function CashTracker() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="3"
+              strokeWidth="2"
               stroke="currentColor"
               className="w-6 h-6"
             >
@@ -39,18 +39,19 @@ export default function CashTracker() {
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             CashTracker
           </h1>
-          <div className="flex gap-4 mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in  ">
-            {projects[0].svg.map((svg, index) => (
-              <div
-                key={index}
-                className="bg-button-light dark:bg-button p-2 rounded-lg"
-              >
-                <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
-                  {svg}
+
+          <div className="flex mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+            <div className="flex bg-offset-button-light dark:bg-button rounded-lg">
+              {projects[0].svg.map((svg, index) => (
+                <div key={index} className="p-3">
+                  <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
+                    {svg}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
           <div className="flex gap-4 mt-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <Link
               className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 lg:hover:bg-offset-button-light lg:dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second lg:hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-base lg:text-lg xl:text-xl"
@@ -66,7 +67,7 @@ export default function CashTracker() {
               ? 'Servidor, Base de Datos y Configuración'
               : 'Server, Database, and Configuration'}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 El servidor utiliza{' '}
@@ -133,7 +134,7 @@ export default function CashTracker() {
               ? 'Autenticación y Autorización'
               : 'Authentication and Authorization'}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Utiliza{' '}
@@ -168,7 +169,7 @@ export default function CashTracker() {
           <h2 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? 'Validación de Datos' : 'Data Validation'}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Utiliza{' '}
@@ -206,7 +207,7 @@ export default function CashTracker() {
               ? 'API Externa para Conversión de Divisas'
               : 'External API for Currency Conversion'}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 La aplicación utiliza la API externa{' '}
@@ -241,7 +242,7 @@ export default function CashTracker() {
           <h2 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? 'Despliegue' : 'Deployment'}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? (
               <>
                 Desplegado utilizando{' '}
