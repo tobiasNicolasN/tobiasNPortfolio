@@ -36,7 +36,7 @@ export default function Portfolio() {
             </svg>
           </Link>
 
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             Portfolio
           </h1>
           <div className="flex gap-4 mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in  ">
@@ -57,22 +57,6 @@ export default function Portfolio() {
               href={'https://www.tobiasnicolasn.com/'}
               target="_blank"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-4 lg:w-6 h-4 lg:h-6"
-              >
-                <path
-                  d="M10 6L16 12L10 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
               {lang ? 'Visitar Sitio' : 'Visit Site'}
             </Link>
             <Link
@@ -80,26 +64,10 @@ export default function Portfolio() {
               href={'https://github.com/tobiasNicolasN/tobiasNPortfolio'}
               target="_blank"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-4 lg:w-6 h-4 lg:h-6"
-              >
-                <path
-                  d="M10 6L16 12L10 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
               {lang ? 'Ver Código' : 'View Code'}
             </Link>
           </div>
-          <h1 className="mt-8 text-lg md:text-xl lg:text-xl xl:text-2xl font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? 'Diseño y Experiencia' : 'Design and Experience'}
           </h1>
           <h1 className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
@@ -204,7 +172,7 @@ export default function Portfolio() {
             )}
           </h1>
 
-          <h1 className="mt-8 text-lg md:text-xl lg:text-xl xl:text-2xl font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang ? 'Formulario de Envío de Correos' : 'Email Submission Form'}
           </h1>
           <h1 className="text-sm md:text-base lg:text-lg xl:text-xl tracking-wider text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
@@ -302,7 +270,7 @@ export default function Portfolio() {
             )}
           </h1>
 
-          <h1 className="text-lg md:text-xl mt-8 lg:text-xl xl:text-2xl font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+          <h1 className="mt-8 mb-1 lg:mb-2 text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang
               ? 'Hosting y Configuración de Dominio'
               : 'Hosting and Domain Configuration'}

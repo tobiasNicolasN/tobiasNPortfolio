@@ -33,10 +33,6 @@ export const skillsFront: ISkills[] = [
     svg: nextSVG,
   },
   {
-    name: 'React',
-    svg: reactSVG,
-  },
-  {
     name: 'Tailwind',
     svg: tailwindSVG,
   },
@@ -70,16 +66,16 @@ export const skillsTools: ISkills[] = [
     name: 'GitHub',
     svg: githubSVG,
   },
-  {
-    name: 'Vite.js',
-    svg: viteSVG,
-  },
 ];
 
 export const skillsOthers: ISkills[] = [
   {
     name: 'JavaScript',
     svg: jsSVG,
+  },
+  {
+    name: 'React',
+    svg: reactSVG,
   },
   {
     name: 'HTML5',
@@ -102,9 +98,13 @@ export const skillsOthers: ISkills[] = [
     svg: actionsSVG,
   },
   {
-    name: 'Jest',
-    svg: jestSVG,
+    name: 'Vite.js',
+    svg: viteSVG,
   },
+  // {
+  //   name: 'Jest',
+  //   svg: jestSVG,
+  // },
   // {
   //   name: 'NPM',
   //   svg: npmSVG,

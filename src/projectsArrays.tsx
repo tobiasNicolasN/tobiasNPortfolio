@@ -18,28 +18,28 @@ export interface IProjects {
 }
 
 const cashTracker: IProjects = {
-  name: 'cashTracker',
+  name: 'CashTracker',
   description: [
-    'Una aplicación fullstack que permite registrar gastos y consumos. Utiliza la API del dólar para anotar los gastos en pesos argentinos y en dólares, según el valor del dólar al momento del gasto. Disponible en versiones mobile y web.',
-    'A fullstack application that allows you to record expenses and consumption. It uses the dollar API to log expenses in Argentine pesos and dollars, according to the exchange rate at the time of the expense. Available in mobile and web versions.',
+    'REST API que permite registrar gastos y consumos. Utiliza la API del dólar para anotar los gastos en pesos argentinos y en dólares, según el valor del dólar al momento del gasto.',
+    'REST API that allows you to record expenses and consumption. It uses the dollar API to log expenses in Argentine pesos and dollars, according to the exchange rate at the time of the expense.',
   ],
   techs: [
     'typescript',
-    'react',
-    'tailwind',
+    // 'react',
+    // 'tailwind',
     'node.js',
     'express',
     'mongodb',
     'mongoose',
     'git',
     'github',
-    'vite.js',
+    // 'vite.js',
   ],
   svg: [
     <SVGTypescript key={0} />,
-    <SVGReact key={1} />,
-    <SVGVite key={8} />,
-    <SVGTailwind key={2} />,
+    // <SVGReact key={1} />,
+    // <SVGVite key={8} />,
+    // <SVGTailwind key={2} />,
     <SVGNodejs key={3} />,
     <SVGExpress key={4} />,
     <SVGMongodb key={5} />,
