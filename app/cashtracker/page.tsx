@@ -55,7 +55,7 @@ export default function CashTracker() {
           <div className="flex gap-4 mt-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <Link
               className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 lg:hover:bg-offset-button-light lg:dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second lg:hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-base lg:text-lg xl:text-xl"
-              href={'https://github.com/tobiasNicolasN/tobiasNPortfolio'}
+              href={'https://github.com/tobiasNicolasN/cashTracker-backend-ts'}
               target="_blank"
             >
               {lang ? 'Ver Código' : 'View Code'}
@@ -106,7 +106,7 @@ export default function CashTracker() {
                   className="text-second-light hover:text-offset-second-light dark:text-second dark:hover:text-offset-second underline"
                 >
                   Express.js
-                </a>{' '}
+                </a>
                 , configured with CORS to allow requests from the specified
                 origin with support for credentials.{' '}
                 <a
