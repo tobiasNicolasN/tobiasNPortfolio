@@ -9,6 +9,9 @@ import SVGGit from '../public/images/git.svg';
 import SVGGitHub from '../public/images/github.svg';
 import SVGVite from '../public/images/vite.svg';
 import SVGMongoose from '../public/images/mongoose.svg';
+import SVGPostgres from '../public/images/postgres.svg';
+import SVGCss from '../public/images/css.svg';
+import SVGJest from '../public/images/jest.svg';
 
 export interface IProjects {
   name: string;
@@ -66,5 +69,26 @@ const portfolio: IProjects = {
   ],
 };
 
-// 0 portfolio, 1 cashTracker
-export const projects: IProjects[] = [portfolio, cashTracker];
+const devQuiz: IProjects = {
+  name: 'DevQuiz',
+  description: [
+    'Mi portafolio refleja un enfoque minimalista, destacando mis proyectos y habilidades. Ofrece una experiencia visual moderna y fluida, asegurando accesibilidad y profesionalismo.',
+    'My portfolio showcases a minimalist approach, highlighting my projects and skills. It offers a modern, seamless visual experience, ensuring accessibility and professionalism.',
+  ],
+  techs: ['typescript', 'react', 'css3', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', 'vite.js'],
+  svg: [
+    <SVGTypescript key={0} />,
+    <SVGVite key={1} />,
+    <SVGReact key={2} />,
+    <SVGCss key={9} />,
+    <SVGNodejs key={3} />,
+    <SVGExpress key={7} />,
+    <SVGPostgres key={6} />,
+    <SVGGit key={4} />,
+    <SVGGitHub key={5} />,
+    <SVGJest key={8}/>
+  ],
+};
+
+// 0 portfolio, 1 cashTracker, 2 DevQuiz
+export const projects: IProjects[] = [portfolio, cashTracker, devQuiz];

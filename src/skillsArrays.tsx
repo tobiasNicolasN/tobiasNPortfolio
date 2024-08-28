@@ -16,6 +16,7 @@ import githubSVG from '../public/images/github.svg';
 import actionsSVG from '../public/images/actions.svg';
 import viteSVG from '../public/images/vite.svg';
 import jestSVG from '../public/images/jest.svg';
+import postgresSVG from '../public/images/postgres.svg';
 
 // Contiene el nombre de la habilidad y su respectiva svg
 export interface ISkills {
@@ -31,6 +32,14 @@ export const skillsFront: ISkills[] = [
   {
     name: 'Next.js',
     svg: nextSVG,
+  },
+  {
+    name: 'React',
+    svg: reactSVG,
+  },
+  {
+    name: 'CSS3',
+    svg: cssSVG,
   },
   {
     name: 'Tailwind',
@@ -55,6 +64,14 @@ export const skillsBack: ISkills[] = [
     name: 'Mongoose',
     svg: mongooseSVG,
   },
+  {
+    name: 'Jest',
+    svg: jestSVG,
+  },
+  {
+    name: 'Postgres',
+    svg: postgresSVG
+  }
 ];
 
 export const skillsTools: ISkills[] = [
@@ -66,6 +83,10 @@ export const skillsTools: ISkills[] = [
     name: 'GitHub',
     svg: githubSVG,
   },
+  {
+    name: 'Vite.js',
+    svg: viteSVG,
+  },
 ];
 
 export const skillsOthers: ISkills[] = [
@@ -74,16 +95,8 @@ export const skillsOthers: ISkills[] = [
     svg: jsSVG,
   },
   {
-    name: 'React',
-    svg: reactSVG,
-  },
-  {
     name: 'HTML5',
     svg: htmlSVG,
-  },
-  {
-    name: 'CSS3',
-    svg: cssSVG,
   },
   {
     name: 'Figma',
@@ -97,14 +110,6 @@ export const skillsOthers: ISkills[] = [
     name: 'Actions',
     svg: actionsSVG,
   },
-  {
-    name: 'Vite.js',
-    svg: viteSVG,
-  },
-  // {
-  //   name: 'Jest',
-  //   svg: jestSVG,
-  // },
   // {
   //   name: 'NPM',
   //   svg: npmSVG,

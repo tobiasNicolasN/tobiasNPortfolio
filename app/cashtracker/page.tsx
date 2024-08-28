@@ -42,7 +42,7 @@ export default function CashTracker() {
 
           <div className="flex lg:mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <div className="flex bg-offset-button-light dark:bg-button rounded-lg">
-              {projects[0].svg.map((svg, index) => (
+              {projects[1].svg.map((svg, index) => (
                 <div key={index} className="p-2 lg:p-3">
                   <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
                     {svg}
