@@ -5,10 +5,27 @@ import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
 import { projects } from '@/src/projectsArrays';
 import Link from 'next/link';
+import { Octokit} from 'octokit';
+import { useEffect } from 'react';
 
 export default function DevQuiz() {
   const { language } = useLang();
   const lang = language === 'spanish';
+  const octokid = new Octokit()
+
+  const getReadme = async () => {
+    const res = await octokid.request('GET /repos/{owner}/{repo}/readme',
+      {owner: 'tobiasnicolasn',
+        repo: 'tobiasNPortfolio'
+      }
+    )
+    const readmeContent = atob(res.data.content)
+    console.log(readmeContent)
+  }
+
+  useEffect(() => {
+    getReadme()
+  },[])
 
   return (
     <div>
@@ -73,7 +90,7 @@ export default function DevQuiz() {
           </h1>
           <h1 className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             {lang
-              ? 'En este proyecto, busqué un enfoque minimalista, centrado en la simplicidad y la usabilidad. Incluye:'
+              ? 'En este proyecto, busqué el enfoque en la jugabilidad el aprendizaje y la formalidad.'
               : 'In this project, I adopted a minimalist approach, focusing on simplicity and usability. It includes:'}
           </h1>
           <h1 className="text-sm md:text-base lg:text-lg xl:text-xl mt-2 text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
