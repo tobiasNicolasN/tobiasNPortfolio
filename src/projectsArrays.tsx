@@ -21,7 +21,7 @@ export interface IProjects {
 }
 
 const cashTracker: IProjects = {
-  name: 'CashTracker',
+  name: 'CashTracker-Backend',
   description: [
     'REST API que permite registrar gastos y consumos. Utiliza la API del dólar para anotar los gastos en pesos argentinos y en dólares, según el valor del dólar al momento del gasto.',
     'REST API that allows you to record expenses and consumption. It uses the dollar API to log expenses in Argentine pesos and dollars, according to the exchange rate at the time of the expense.',
@@ -91,4 +91,10 @@ const devQuiz: IProjects = {
 };
 
 // 0 portfolio, 1 cashTracker, 2 DevQuiz
+export enum Projects {
+  portfolio,
+  cashTracker,
+  devQuiz
+}
+
 export const projects: IProjects[] = [portfolio, cashTracker, devQuiz];
