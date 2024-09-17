@@ -5,8 +5,8 @@ import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
 import { Projects, projects } from '@/src/projectsArrays';
 import Link from 'next/link';
-import { Octokit } from 'octokit';
-import { useEffect, useState } from 'react';
+// import { Octokit } from 'octokit';
+// import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'; // Soporte para GitHub-Flavored Markdown
 import rehypeHighlight from 'rehype-highlight'; // Resaltado de sintaxis
@@ -15,32 +15,32 @@ import Techs from '@/src/Techs';
 export default function DevQuiz() {
   const { language } = useLang();
   const lang = language === 'spanish';
-  const octokid = new Octokit();
+  // const octokid = new Octokit();
   // const [textES, setTextES] = useState<string>('');
-  const [text, setText] = useState<string>('');
+  // const [text, setText] = useState<string>('');
 
-  const getReadme = async () => {
-    const res = await octokid.request('GET /repos/{owner}/{repo}/readme', {
-      owner: 'tobiasnicolasn',
-      repo: 'cashTracker-backend-ts',
-    });
-    // const resES = await octokid.request('GET /repos/{owner}/{repo}/readme/{dir}', {
-    //   owner: 'tobiasnicolasn',
-    //   repo: 'cashTracker-backend-ts',
-    //   dir: 'es'
-    // });
+  // const getReadme = async () => {
+  //   const res = await octokid.request('GET /repos/{owner}/{repo}/readme', {
+  //     owner: 'tobiasnicolasn',
+  //     repo: 'cashTracker-backend-ts',
+  //   });
+  //   const resES = await octokid.request('GET /repos/{owner}/{repo}/contents/{path}', {
+  //     owner: 'tobiasnicolasn',
+  //     repo: 'cashTracker-backend-ts',
+  //     path: 'README-ES.md'
+  //   });
 
-    const readmeContent = atob(res.data.content);
-    // const readmeContentES = atob(resES.data.content);
-    console.log(readmeContent);
-    // console.log(readmeContentES)
-    setText(readmeContent);
-    // setTextES(readmeContentES);
-  };
+  //   const readmeContent = atob(res.data.content);
+  //   const readmeContentES = atob(resES.data.content);
+  //   console.log(readmeContent);
+  //   console.log(readmeContentES)
+  //   setText(readmeContent);
+  //   setTextES(readmeContentES);
+  // };
 
-  useEffect(() => {
-    getReadme();
-  }, []);
+  // useEffect(() => {
+  //   getReadme();
+  // }, []);
 
   return (
     <div>
@@ -68,11 +68,27 @@ export default function DevQuiz() {
             </svg>
           </Link>
 
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+            DevQuiz Backend
+          </h1>
+
+          <Techs num={Projects.devQuizBackend} projects={projects} />
+
+          <div className="flex gap-4 mt-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
+            <Link
+              className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 lg:hover:bg-offset-button-light lg:dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second lg:hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-base lg:text-lg xl:text-xl"
+              href={'https://github.com/tobiasNicolasN/devquiz-backend'}
+              target="_blank"
+            >
+              {lang ? 'Ver Código' : 'View Code'}
+            </Link>
+          </div>
+
           {/* <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             DevQuiz
           </h1> */}
 
-          <ReactMarkdown
+          {/* <ReactMarkdown
             className={
               'text-sm md:text-base lg:text-lg xl:text-xl text-gray-800 dark:text-gray-200'
             }
@@ -92,7 +108,7 @@ export default function DevQuiz() {
               h1: ({ children }) => (
                 <>
                   <h1 className="text-5xl font-bold mb-6">{children}</h1>
-                  <Techs projects={projects} num={Projects.devQuiz} />
+                  <Techs projects={projects} num={Projects.devQuizBackend} />
                   <div className="flex gap-4 mt-4 mb-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
                     <Link
                       className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 hover:bg-offset-button-light dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-base lg:text-lg xl:text-xl"
@@ -137,8 +153,8 @@ export default function DevQuiz() {
               ),
             }}
           >
-            {text}
-          </ReactMarkdown>
+            {lang ? textES : text}
+          </ReactMarkdown> */}
         </main>
       </div>
       <Footer />

@@ -12,12 +12,12 @@ function Projects({ projects }: IProjectsProps) {
   const lang = language === 'spanish';
 
   return (
-    <div className={`flex flex-col lg:flex-row gap-6 duration-300 mt-6`}>
+    <div className={`flex flex-col lg:grid lg:grid-cols-2 gap-4 duration-300 mt-6`}>
       {projects.map((data, index) => (
         <Link
           href={data.name.toLocaleLowerCase()}
           key={index}
-          className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button lg:hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:w-1/2 lg:hover:bg-opacity-100 duration-300 cursor-pointer"
+          className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button lg:hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:hover:bg-opacity-100 duration-300 cursor-pointer"
         >
           <div className="w-full p-4 flex flex-col font-mono gap-2 text-left">
             <h1 className="text-lg md:text-xl xl:text-2xl text-gray-800 dark:text-gray-200 tracking-wide">
