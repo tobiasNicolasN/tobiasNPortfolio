@@ -9,6 +9,9 @@ import SVGGit from '../public/images/git.svg';
 import SVGGitHub from '../public/images/github.svg';
 import SVGVite from '../public/images/vite.svg';
 import SVGMongoose from '../public/images/mongoose.svg';
+import SVGPostgres from '../public/images/postgres.svg';
+import SVGCss from '../public/images/css.svg';
+import SVGJest from '../public/images/jest.svg';
 
 export interface IProjects {
   name: string;
@@ -17,8 +20,8 @@ export interface IProjects {
   svg: any[];
 }
 
-const cashTracker: IProjects = {
-  name: 'CashTracker',
+const cashTrackerBackend: IProjects = {
+  name: 'CashTracker-Backend',
   description: [
     'REST API que permite registrar gastos y consumos. Utiliza la API del dólar para anotar los gastos en pesos argentinos y en dólares, según el valor del dólar al momento del gasto.',
     'REST API that allows you to record expenses and consumption. It uses the dollar API to log expenses in Argentine pesos and dollars, according to the exchange rate at the time of the expense.',
@@ -66,5 +69,46 @@ const portfolio: IProjects = {
   ],
 };
 
-// 0 portfolio, 1 cashTracker
-export const projects: IProjects[] = [portfolio, cashTracker];
+const devQuizBackend: IProjects = {
+  name: 'DevQuiz-Backend',
+  description: [
+    'El backend de DevQuiz gestiona las preguntas, jugadores y puntuaciones, garantizando un rendimiento óptimo y la escalabilidad del juego.',
+    'DevQuiz backend manages questions, players, and scores, ensuring optimal performance and game scalability.',
+  ],
+  techs: ['typescript', 'react', 'css3', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', 'vite.js'],
+  svg: [
+    <SVGTypescript key={0} />,
+    <SVGNodejs key={3} />,
+    <SVGExpress key={7} />,
+    <SVGPostgres key={6} />,
+    <SVGGit key={4} />,
+    <SVGGitHub key={5} />,
+    <SVGJest key={8}/>
+  ],
+};
+
+const devQuizFront: IProjects = {
+  name: 'DevQuiz-Frontend',
+  description: [
+    'DevQuiz es un juego interactivo de preguntas sobre desarrollo web. Desafía tus conocimientos en temas como TypeScript, JavaScript, React, HTML y CSS mientras mejoras tus habilidades.',
+    'DevQuiz is an interactive quiz game about web development. Challenge your knowledge in topics like TypeScript, JavaScript, React, HTML, and CSS while improving your skills.',
+  ],
+  techs: ['typescript', 'react', 'css3', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', 'vite.js'],
+  svg: [
+    <SVGTypescript key={0} />,
+    <SVGVite key={1} />,
+    <SVGReact key={2} />,
+    <SVGCss key={9} />,
+    <SVGGit key={4} />,
+    <SVGGitHub key={5} />,
+  ],
+};
+
+export enum Projects {
+  portfolio,
+  cashTrackerBackend,
+  devQuizFront,
+  devQuizBackend
+}
+
+export const projects: IProjects[] = [portfolio, cashTrackerBackend, devQuizFront, devQuizBackend];

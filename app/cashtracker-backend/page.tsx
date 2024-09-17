@@ -3,7 +3,8 @@
 import { useLang } from '@/context/LanguageContext';
 import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
-import { projects } from '@/src/projectsArrays';
+import { Projects, projects } from '@/src/projectsArrays';
+import Techs from '@/src/Techs';
 import Link from 'next/link';
 
 export default function CashTracker() {
@@ -40,17 +41,8 @@ export default function CashTracker() {
             CashTracker
           </h1>
 
-          <div className="flex lg:mt-2 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
-            <div className="flex bg-offset-button-light dark:bg-button rounded-lg">
-              {projects[0].svg.map((svg, index) => (
-                <div key={index} className="p-2 lg:p-3">
-                  <div className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10">
-                    {svg}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Techs projects={projects} num={Projects.cashTrackerBackend} />
+
 
           <div className="flex gap-4 mt-4 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             <Link
