@@ -1,5 +1,4 @@
 import { useLang } from '@/context/LanguageContext';
-import Link from 'next/link';
 import React from 'react';
 import { Element } from 'react-scroll';
 
@@ -9,11 +8,11 @@ function About() {
   return (
     <Element name='about'>
       <div className="animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
-        <Link href={'/about'} className="text-base md:text-lg lg:text-xl xl:text-2xl font-sans text-second-light hover:text-offset-second-light dark:text-second dark:hover:text-offset-second underline duration-300 font-medium inline underline cursor-pointer">
+        <h1 className="text-base md:text-lg lg:text-xl xl:text-2xl font-sans text-second-light  dark:text-second duration-300 font-medium inline">
           {lang
             ? 'HOLA, MI NOMBRE ES TOBIAS NICOLAS NUÑEZ.'
             : 'HELLO, MY NAME IS TOBIAS NICOLAS NUÑEZ.'}
-        </Link >
+        </h1 >
       </div>
       <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
         {lang ? 'Soy desarrollador FullStack,' : "I'm a FullStack developer,"}
