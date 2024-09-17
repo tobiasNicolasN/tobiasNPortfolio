@@ -75,7 +75,7 @@ const devQuizBackend: IProjects = {
     'El backend de DevQuiz gestiona las preguntas, jugadores y puntuaciones, garantizando un rendimiento óptimo y la escalabilidad del juego.',
     'DevQuiz backend manages questions, players, and scores, ensuring optimal performance and game scalability.',
   ],
-  techs: ['typescript', 'react', 'css3', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', 'vite.js'],
+  techs: ['typescript', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', ],
   svg: [
     <SVGTypescript key={0} />,
     <SVGNodejs key={3} />,
@@ -93,7 +93,7 @@ const devQuizFront: IProjects = {
     'DevQuiz es un juego interactivo de preguntas sobre desarrollo web. Desafía tus conocimientos en temas como TypeScript, JavaScript, React, HTML y CSS mientras mejoras tus habilidades.',
     'DevQuiz is an interactive quiz game about web development. Challenge your knowledge in topics like TypeScript, JavaScript, React, HTML, and CSS while improving your skills.',
   ],
-  techs: ['typescript', 'react', 'css3', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', 'vite.js'],
+  techs: ['typescript', 'react', 'css3', 'git', 'github', 'vite.js'],
   svg: [
     <SVGTypescript key={0} />,
     <SVGVite key={1} />,
