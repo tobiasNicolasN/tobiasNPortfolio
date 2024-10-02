@@ -75,7 +75,15 @@ const devQuizBackend: IProjects = {
     'El backend de DevQuiz gestiona las preguntas, jugadores y puntuaciones, garantizando un rendimiento óptimo y la escalabilidad del juego.',
     'DevQuiz backend manages questions, players, and scores, ensuring optimal performance and game scalability.',
   ],
-  techs: ['typescript', 'node.js', 'express', 'postgres', 'git', 'github', 'jest', ],
+  techs: [
+    'typescript',
+    'node.js',
+    'express',
+    'postgres',
+    'git',
+    'github',
+    'jest',
+  ],
   svg: [
     <SVGTypescript key={0} />,
     <SVGNodejs key={3} />,
@@ -83,7 +91,7 @@ const devQuizBackend: IProjects = {
     <SVGPostgres key={6} />,
     <SVGGit key={4} />,
     <SVGGitHub key={5} />,
-    <SVGJest key={8}/>
+    <SVGJest key={8} />,
   ],
 };
 
@@ -104,11 +112,34 @@ const devQuizFront: IProjects = {
   ],
 };
 
+const domoChallenge: IProjects = {
+  name: 'Domo-challenge',
+  description: [
+    'Sitio web desarrollado como parte de una prueba técnica para un puesto de Frontend. En este proyecto, repliqué el diseño de escritorio a partir de una imagen y creé el diseño responsive por mi cuenta.',
+    'Website developed as part of a technical assessment for a Frontend position. In this project, I replicated the desktop design from an image and created the responsive design myself.',
+  ],
+  techs: ['typescript', 'next.js', 'css3', 'git', 'github'],
+  svg: [
+    <SVGTypescript key={0} />,
+    <SVGNext key={2} />,
+    <SVGCss key={9} />,
+    <SVGGit key={4} />,
+    <SVGGitHub key={5} />,
+  ],
+};
+
 export enum Projects {
   portfolio,
   cashTrackerBackend,
   devQuizFront,
-  devQuizBackend
+  devQuizBackend,
+  domoChallenge,
 }
 
-export const projects: IProjects[] = [portfolio, cashTrackerBackend, devQuizFront, devQuizBackend];
+export const projects: IProjects[] = [
+  portfolio,
+  devQuizFront,
+  devQuizBackend,
+  cashTrackerBackend,
+  domoChallenge,
+];

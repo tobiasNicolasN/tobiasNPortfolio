@@ -3,6 +3,7 @@
 import { useLang } from '@/context/LanguageContext';
 import Footer from '@/src/Footer';
 import NavBar from '@/src/NavBar';
+import PreviousPageButton from '@/src/PreviousPageButton';
 import { Projects, projects } from '@/src/projectsArrays';
 import Techs from '@/src/Techs';
 import Link from 'next/link';
@@ -16,26 +17,7 @@ export default function CashTracker() {
       <div className="w-full flex flex-col items-center mt-14 md:mt-16 lg:mt-20 mb-20">
         <NavBar />
         <main className="flex w-11/12 md:w-10/12 lg:w-10/12 xl:w-9/12 2xl:w-7/12 flex-col justify-center font-sans">
-          <Link
-            className="animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in w-8 mb-6 md:mb-8"
-            href={'/'}
-            aria-label="previous page button"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10.5 19.5l-7.5-7.5 7.5-7.5M2.25 12h19.5"
-              />
-            </svg>
-          </Link>
+          <PreviousPageButton/>
 
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-2 font-semibold font-mono text-gray-800 dark:text-gray-200 animate-fade-right animate-once animate-duration-[400ms] animate-delay-100 animate-ease-in">
             CashTracker
