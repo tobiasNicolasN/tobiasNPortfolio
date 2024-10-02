@@ -2,6 +2,7 @@
 import { useLang } from '@/context/LanguageContext';
 import { IProjects } from './projectsArrays';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface IProjectsProps {
   projects: IProjects[];
@@ -20,7 +21,10 @@ function Projects({ projects }: IProjectsProps) {
           className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button lg:hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:hover:bg-opacity-100 duration-300 cursor-pointer"
         >
           <div className="w-full p-4 flex flex-col font-mono gap-2 text-left">
-            <h1 className="text-lg md:text-xl xl:text-2xl text-gray-800 dark:text-gray-200 tracking-wide">
+            <div>
+              <Image src={'/images/img.png'} alt="hola" width={1400} height={100} className='rounded-lg'/>
+            </div>
+            <h1 className="text-lg md:text-xl xl:text-2xl text-gray-800 font-medium dark:text-gray-200 tracking-wider">
               {data.name}
             </h1>
             <div className={`flex flex-wrap gap-4`}>
