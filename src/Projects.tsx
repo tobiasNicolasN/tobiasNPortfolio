@@ -18,11 +18,11 @@ function Projects({ projects }: IProjectsProps) {
         <Link
           href={data.name.toLocaleLowerCase()}
           key={index}
-          className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button lg:hover:ring-2 ring-second-light dark:ring-second bg-opacity-50 w-full lg:hover:bg-opacity-100 duration-300 cursor-pointer"
+          className="flex flex-col rounded-lg items-center bg-button-light dark:bg-button lg:hover:ring-2 ring-second-light dark:ring-second dark:bg-opacity-50 w-full lg:hover:bg-opacity-100 duration-300 cursor-pointer"
         >
           <div className="w-full p-4 flex flex-col font-mono gap-2 text-left">
             <div>
-              <Image src={'/images/img.png'} alt="hola" width={1400} height={100} className='rounded-lg'/>
+              <Image src={`/images/${data.name.toLocaleLowerCase()}.png`} alt="hola" width={1400} height={100} className='rounded-lg'/>
             </div>
             <h1 className="text-lg md:text-xl xl:text-2xl text-gray-800 font-medium dark:text-gray-200 tracking-wider">
               {data.name}

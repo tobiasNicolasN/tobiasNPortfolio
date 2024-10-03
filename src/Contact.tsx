@@ -210,7 +210,7 @@ function Contact() {
               href={'https://github.com/tobiasNicolasN'}
               target="_blank"
               aria-label="TobiasNicolasN GitHub"
-              className="bg-button-light dark:bg-button hover:bg-offset-button-light dark:hover:bg-offset-button ring-second-light dark:ring-second-light hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
+              className="bg-button-light dark:bg-button hover:bg-offset-button-light dark:hover:bg-offset-button ring-second-light dark:ring-second hover:ring-2 hover:scale-105 duration-500 rounded-lg w-12 h-12 flex items-center justify-center"
             >
               <div className="w-8 h-8 text-gray-800 dark:text-gray-200">
                 <SVGGitHub />

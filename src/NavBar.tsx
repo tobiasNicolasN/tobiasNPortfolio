@@ -76,8 +76,7 @@ function NavBar() {
                 offset={-70}
                 duration={500}
               >
-                <span className="font-semibold">01</span>{' '}
-                {lang ? 'sobre mi' : 'about me'}
+                {lang ? 'Sobre mi' : 'About me'}
               </Link>
             </li>
             <li className={isHome ? '' : 'hidden'}>
@@ -90,8 +89,7 @@ function NavBar() {
                 offset={-150}
                 duration={700}
               >
-                <span className="font-semibold">02</span>{' '}
-                {lang ? 'proyectos' : 'projects'}
+                {lang ? 'Proyectos' : 'Projects'}
               </Link>
             </li>
             <li className={isHome ? '' : 'hidden'}>
@@ -104,8 +102,7 @@ function NavBar() {
                 offset={-70}
                 duration={700}
               >
-                <span className="font-semibold">03</span>{' '}
-                {lang ? 'contacto' : 'contact'}
+                {lang ? 'Contacto' : 'Contact'}
               </Link>
             </li>
             <li>
@@ -150,8 +147,7 @@ function NavBar() {
                   duration={500}
                 >
                   {' '}
-                  <span className="font-semibold">01</span>{' '}
-                  {lang ? 'sobre mi' : 'about me'}
+                  {lang ? 'Sobre mi' : 'About me'}
                 </Link>
               </li>
               <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
@@ -164,8 +160,7 @@ function NavBar() {
                   offset={-70}
                   duration={500}
                 >
-                  <span className="font-semibold">02</span>{' '}
-                  {lang ? 'proyectos' : 'projects'}
+                  {lang ? 'Proyectos' : 'Projects'}
                 </Link>
               </li>
               <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
@@ -179,8 +174,7 @@ function NavBar() {
                   duration={500}
                 >
                   {' '}
-                  <span className="font-semibold">03</span>{' '}
-                  {lang ? 'contacto' : 'contact'}
+                  {lang ? 'Contacto' : 'Contact'}
                 </Link>
               </li>
             </>

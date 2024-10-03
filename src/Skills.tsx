@@ -113,11 +113,11 @@ function Skills() {
                 }
               }}
               key={index}
-              className={`flex flex-col gap-2 md:gap-3 rounded-lg items-center justify-center bg-button-light dark:bg-button bg-opacity-50  w-auto h-20 md:h-24 lg:h-28 ring-second-light dark:ring-second duration-300 ${
+              className={`flex flex-col gap-2 md:gap-3 rounded-lg items-center justify-center bg-button-light dark:bg-button dark:bg-opacity-50 dark:hover:bg-opacity-100  w-auto h-20 md:h-24 lg:h-28 ring-second-light dark:ring-second duration-300 ${
                 skill !== 3 ? 'cursor-pointer lg:hover:ring-2' : ''
               } ${
                 techs.includes(data.name.toLowerCase())
-                  ? 'ring-2 bg-opacity-100'
+                  ? 'ring-2 dark:bg-opacity-100'
                   : ''
               }`}
             >

@@ -131,15 +131,15 @@ const domoChallenge: IProjects = {
 export enum Projects {
   portfolio,
   cashTrackerBackend,
+  domoChallenge,
   devQuizFront,
   devQuizBackend,
-  domoChallenge,
 }
 
 export const projects: IProjects[] = [
   portfolio,
-  devQuizFront,
-  devQuizBackend,
   cashTrackerBackend,
   domoChallenge,
+  devQuizFront,
+  devQuizBackend,
 ];
