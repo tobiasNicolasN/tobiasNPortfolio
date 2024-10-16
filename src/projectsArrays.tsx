@@ -18,6 +18,8 @@ export interface IProjects {
   description: string[]; // Español: decription[0], Ingles: description[1]
   techs: string[];
   svg: any[];
+  code?: string;
+  site?: string;
 }
 
 const cashTrackerBackend: IProjects = {
@@ -50,6 +52,7 @@ const cashTrackerBackend: IProjects = {
     <SVGGit key={6} />,
     <SVGGitHub key={7} />,
   ],
+  code: 'https://github.com/tobiasNicolasN/cashTracker-backend-ts',
 };
 
 const portfolio: IProjects = {
@@ -67,6 +70,8 @@ const portfolio: IProjects = {
     <SVGGit key={4} />,
     <SVGGitHub key={5} />,
   ],
+  code: 'https://github.com/tobiasNicolasN/tobiasNPortfolio',
+  site: 'https://www.tobiasnicolasn.com/',
 };
 
 const devQuizBackend: IProjects = {
@@ -93,6 +98,7 @@ const devQuizBackend: IProjects = {
     <SVGGitHub key={5} />,
     <SVGJest key={8} />,
   ],
+  code: 'https://github.com/tobiasNicolasN/devquiz-backend',
 };
 
 const devQuizFront: IProjects = {
@@ -110,6 +116,8 @@ const devQuizFront: IProjects = {
     <SVGGit key={4} />,
     <SVGGitHub key={5} />,
   ],
+  code: 'https://github.com/tobiasNicolasN/devquiz',
+  site: 'https://devquiz-production.up.railway.app/',
 };
 
 const domoChallenge: IProjects = {
@@ -126,20 +134,22 @@ const domoChallenge: IProjects = {
     <SVGGit key={4} />,
     <SVGGitHub key={5} />,
   ],
+  code: 'https://github.com/tobiasNicolasN/DOMOChallenge',
+  site: 'https://domochallenge-production.up.railway.app/',
 };
 
 export enum Projects {
-  portfolio,
-  cashTrackerBackend,
-  domoChallenge,
   devQuizFront,
+  domoChallenge,
   devQuizBackend,
+  cashTrackerBackend,
+  portfolio,
 }
 
 export const projects: IProjects[] = [
-  portfolio,
-  cashTrackerBackend,
-  domoChallenge,
   devQuizFront,
+  domoChallenge,
   devQuizBackend,
+  cashTrackerBackend,
+  portfolio,
 ];

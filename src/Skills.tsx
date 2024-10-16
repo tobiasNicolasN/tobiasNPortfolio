@@ -11,6 +11,7 @@ import { useLang } from '@/context/LanguageContext';
 import { Element } from 'react-scroll';
 import Projects from './Projects';
 import { projects } from './projectsArrays';
+import ClearFilter from './ClearFilter';
 
 function Skills() {
   const { language } = useLang();
@@ -62,6 +63,11 @@ function Skills() {
       <h1 className="text-xl md:text-2xl xl:text-3xl font-mono font-medium">
         {lang ? 'PROYECTOS' : 'PROJECTS'}
       </h1>
+      <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 mt-2">
+        {lang
+          ? 'Seleccioná las tecnologías para filtrar los proyectos:'
+          : 'Select technologies to filter projects:'}
+      </p>
       {/* Botones de seleccion de tecnologias */}
       <div className="flex flex-col mt-4">
         <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-4 mb-4 md:mb-4 text-xs md:text-sm lg:text-base">
@@ -132,6 +138,11 @@ function Skills() {
         </div>
       </div>
       <Projects projects={filteredProjects} />
+      {filteredProjects.length < 1 ? (
+        <ClearFilter lang={lang} setTechs={setTechs} />
+      ) : (
+        ''
+      )}
     </Element>
   );
 }
