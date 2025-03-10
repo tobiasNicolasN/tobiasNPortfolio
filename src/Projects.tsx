@@ -24,11 +24,11 @@ function Projects({ projects }: IProjectsProps) {
           <div className="w-full p-4 flex flex-col font-mono gap-2 text-left">
             <div>
               <Image
-                src={`/images/${data.name.toLocaleLowerCase()}.png`}
-                alt={lang ? "Imagen del proyecto" : "Project image"}
+                src={`/images/${data.photo.toLocaleLowerCase()}.png`}
+                alt={lang ? 'Imagen del proyecto' : 'Project image'}
                 width={1400}
                 height={100}
-                className="rounded-lg"
+                className="rounded-lg object-cover w-full max-h-64"
               />
             </div>
             <h1 className="text-lg md:text-xl xl:text-2xl text-gray-800 font-medium dark:text-gray-200 tracking-wider">

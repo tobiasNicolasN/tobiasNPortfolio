@@ -190,7 +190,7 @@ function Contact() {
             {lang
               ? 'Enviame un mensaje utilizando el formulario o escribime directamente a '
               : 'Send me a message using the form or write to me directly at '}
-            <span className="text-second-light dark:text-second">tobias.nicolas001@gmail.com</span>
+            <span className="text-second-light dark:text-second hover:cursor-pointer" onClick={() => window.location.href = 'mailto:tobias.nicolas001@gmail.com'}>tobias.nicolas001@gmail.com</span>
             {lang
               ? '. Responderé lo más pronto posible.'
               : ". I'll respond as soon as possible."}

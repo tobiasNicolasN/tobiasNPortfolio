@@ -57,6 +57,10 @@ export const skillsBack: ISkills[] = [
     svg: expressSVG,
   },
   {
+    name: 'Firebase',
+    svg: firebaseSVG,
+  },
+  {
     name: 'MongoDB',
     svg: mongodbSVG,
   },
@@ -65,13 +69,13 @@ export const skillsBack: ISkills[] = [
     svg: mongooseSVG,
   },
   {
+    name: 'Postgres',
+    svg: postgresSVG,
+  },
+  {
     name: 'Jest',
     svg: jestSVG,
   },
-  {
-    name: 'Postgres',
-    svg: postgresSVG
-  }
 ];
 
 export const skillsTools: ISkills[] = [
@@ -82,6 +86,10 @@ export const skillsTools: ISkills[] = [
   {
     name: 'GitHub',
     svg: githubSVG,
+  },
+  {
+    name: 'Actions',
+    svg: actionsSVG,
   },
   {
     name: 'Vite.js',
@@ -101,14 +109,6 @@ export const skillsOthers: ISkills[] = [
   {
     name: 'Figma',
     svg: figmaSVG,
-  },
-  {
-    name: 'Firebase',
-    svg: firebaseSVG,
-  },
-  {
-    name: 'Actions',
-    svg: actionsSVG,
   },
   // {
   //   name: 'NPM',
