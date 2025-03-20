@@ -183,7 +183,27 @@ const esVeganoAdmin: IProjects = {
   ],
 };
 
+const shorthand: IProjects = {
+  name: 'Shorthand Comparison Web',
+  photo: 'shorthand-app',
+  description: [
+    'Shorthand Comparison App es una herramienta con OCR integrado y reconocimiento de PDFs, diseñada para evaluar precisión y velocidad en taquigrafía, resaltando errores y mostrando estadísticas.',
+    'Shorthand Comparison App is a tool with integrated OCR and PDF recognition, designed to assess shorthand accuracy and speed, highlighting errors and providing statistics.',
+  ],
+  techs: ['typescript', 'next.js', 'css3', 'tailwind', 'git', 'github'],
+  svg: [
+    <SVGTypescript key={0} />,
+    <SVGNext key={2} />,
+    <SVGCss key={9} />,
+    <SVGTailwind key={1} />,
+    <SVGGit key={4} />,
+    <SVGGitHub key={5} />,
+  ],
+  site: 'https://examspirit.in/',
+};
+
 export enum Projects {
+  shorthand,
   esVeganoGooglePlay,
   esVeganoAdmin,
   devQuizFront,
@@ -194,6 +214,7 @@ export enum Projects {
 }
 
 export const projects: IProjects[] = [
+  shorthand,
   esVeganoGooglePlay,
   esVeganoAdmin,
   devQuizFront,
