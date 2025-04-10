@@ -12,7 +12,7 @@ function ClearFilter({lang, setTechs}: IClearFilterProps) {
     >
       <div className="flex flex-col rounded-lg bg-button-light dark:bg-button dark:bg-opacity-50 w-full duration-300">
         <div className="w-full p-4 flex flex-col font-mono gap-2 text-left">
-          <h1 className="font-sans text-base md:text-lg xl:text-xl mb-4 text-gray-700 dark:text-gray-300">
+          <h1 className="font-sans text-sm md:text-base xl:text-lg mb-4 text-gray-700 dark:text-gray-300">
             {lang
               ? 'Actualmente no hay proyectos que utilicen las tecnologías seleccionadas.'
               : 'There are currently no projects using the selected technologies.'}

@@ -2,15 +2,14 @@
 
 import { useLang } from '@/context/LanguageContext';
 import { Link } from 'react-scroll';
-import DropDown from './DropDown';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import SVGDark from '../public/images/dark.svg';
 import SVGLight from '../public/images/light.svg';
 import SVGSystem from '../public/images/system.svg';
-import ThemeDropDown from './ThemeDropDown';
 import { usePathname } from 'next/navigation';
 import LinkNext from 'next/link';
+import { Settings } from './Settings';
 
 function NavBar() {
   const { language, setLanguage } = useLang();
@@ -60,15 +59,15 @@ function NavBar() {
           <div className="md:flex md:items-center gap-2">
             <LinkNext
               href="/"
-              className="text-xl md:text-2xl lg:text-2xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
+              className="text-lg md:text-xl lg:text-xl font-medium hover:text-offset-second-light dark:hover:text-offset-second ease-in duration-300"
             >
               TobiasNicolasN
             </LinkNext>
           </div>
-          <ul className="hidden lg:flex items-center justify-center gap-4">
+          <ul className="hidden lg:flex items-center justify-center gap-6">
             <li className={isHome ? '' : 'hidden'}>
               <Link
-                className="group transition-all duration-500 ease-in-out text-xl hover:text-second-light dark:hover:text-second"
+                className="group transition-all duration-500 ease-in-out text-lg hover:text-second-light dark:hover:text-second"
                 href="/"
                 to="about"
                 spy={true}
@@ -81,7 +80,19 @@ function NavBar() {
             </li>
             <li className={isHome ? '' : 'hidden'}>
               <Link
-                className="group transition-all duration-500 ease-in-out text-xl hover:text-second-light dark:hover:text-second"
+                className="group transition-all duration-500 ease-in-out text-lg hover:text-second-light dark:hover:text-second"
+                href="/"
+                to="experience"
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={700}
+              >
+                {lang ? 'Experiencia' : 'Experience'}
+              </Link>
+            </li><li className={isHome ? '' : 'hidden'}>
+              <Link
+                className="group transition-all duration-500 ease-in-out text-lg hover:text-second-light dark:hover:text-second"
                 href="/"
                 to="projects"
                 spy={true}
@@ -94,7 +105,7 @@ function NavBar() {
             </li>
             <li className={isHome ? '' : 'hidden'}>
               <Link
-                className="group transition-500 ease-in-out text-xl hover:text-second-light dark:hover:text-second"
+                className="group transition-500 ease-in-out text-lg hover:text-second-light dark:hover:text-second"
                 href="/"
                 to="contact"
                 spy={true}
@@ -106,10 +117,7 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <DropDown />
-            </li>
-            <li>
-              <ThemeDropDown
+            <Settings
                 updateSystemMode={updateSystemMode}
                 systemMode={systemMode}
                 mounted={mounted}
@@ -128,7 +136,7 @@ function NavBar() {
         }`}
       >
         <ul
-          className={`flex flex-col font-sans gap-3 text-xl text-gray-800 dark:text-gray-200 ${
+          className={`flex flex-col font-sans gap-3 text-lg text-gray-800 dark:text-gray-200 ${
             menu
               ? 'animate-fade-down animate-once animate-duration-300 animate-delay-500 animate-ease-in'
               : 'hidden'
@@ -136,7 +144,7 @@ function NavBar() {
         >
           {isHome ? (
             <>
-              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-sm p-1">
                 <Link
                   href="/"
                   to="about"
@@ -150,7 +158,19 @@ function NavBar() {
                   {lang ? 'Sobre mi' : 'About me'}
                 </Link>
               </li>
-              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-sm p-1">
+                <Link
+                  onClick={() => setMenu(false)}
+                  href="/"
+                  to="experience"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  {lang ? 'Experiencia' : 'Experience'}
+                </Link>
+              </li><li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-sm p-1">
                 <Link
                   onClick={() => setMenu(false)}
                   href="/"
@@ -163,7 +183,7 @@ function NavBar() {
                   {lang ? 'Proyectos' : 'Projects'}
                 </Link>
               </li>
-              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+              <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-sm p-1">
                 <Link
                   href="/"
                   to="contact"
@@ -179,7 +199,7 @@ function NavBar() {
               </li>
             </>
           ) : (
-            <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-base p-1">
+            <li className="bg-bg-light dark:bg-offset-button rounded-lg flex justify-center text-sm p-1">
               <LinkNext href="/">
                 {' '}
                 <span className="font-semibold">01</span>{' '}
