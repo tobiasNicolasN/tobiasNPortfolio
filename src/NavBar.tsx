@@ -211,7 +211,7 @@ function NavBar() {
             <div className="flex gap-4">
               <button
                 onClick={() => setLanguage('spanish')}
-                className={`z-50 text-xs duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-sm duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? 'ring-2' : ''
                 }`}
               >
@@ -219,7 +219,7 @@ function NavBar() {
               </button>
               <button
                 onClick={() => setLanguage('english')}
-                className={`z-50 text-xs duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
+                className={`z-50 text-sm duration-200 bg-bg-light dark:bg-offset-button ring-second-light dark:ring-second rounded-lg min-w-28 px-3 p-2 inline-flex items-center justify-center group ${
                   lang ? '' : 'ring-2'
                 }`}
               >

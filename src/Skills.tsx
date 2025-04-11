@@ -63,14 +63,14 @@ function Skills() {
       <h1 className="text-lg md:text-xl xl:text-2xl font-mono font-medium">
         {lang ? 'Proyectos' : 'Projects'}
       </h1>
-      <p className="text-xs md:text-sm lg:text-base text-gray-600 dark:text-gray-300 mt-2">
+      <p className="text-sm md:text-sm lg:text-base text-gray-600 dark:text-gray-300 mt-2">
         {lang
           ? 'Seleccioná las tecnologías para filtrar los proyectos:'
           : 'Select technologies to filter projects:'}
       </p>
       {/* Botones de seleccion de tecnologias */}
       <div className="flex flex-col mt-4">
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-4 mb-4 md:mb-4 text-xs md:text-xs lg:text-sm">
+        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-4 mb-4 md:mb-4 text-sm md:text-sm lg:text-sm">
           <button
             className={`duration-300 bg-button-light shadow-lg dark:bg-button hover:bg-offset-button-light dark:hover:bg-offset-button hover:ring-2  w-auto  hover:ring-second-light dark:hover:ring-second rounded-lg md:p-2 inline-flex items-center justify-center py-2 ${
               skill === 0 ? 'ring-second-light dark:ring-second ring-2' : ''
@@ -130,7 +130,7 @@ function Skills() {
               <div className="text-gray-800 dark:text-gray-200 w-6 h-6 md:w-8 md:h-8">
                 <data.svg />
               </div>
-              <h1 className="text-xs md:text-xs lg:text-sm overflow-hidden">
+              <h1 className="text-sm md:text-sm lg:text-sm overflow-hidden">
                 {data.name}
               </h1>
             </div>

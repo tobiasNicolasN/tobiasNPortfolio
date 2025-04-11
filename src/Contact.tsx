@@ -68,7 +68,7 @@ function Contact() {
               })}
             />
             {errors.name && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-xs md:text-sm pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-sm md:text-sm pointer-events-none font-sans">
                 {errors.name.message}
               </div>
             )}
@@ -97,7 +97,7 @@ function Contact() {
               })}
             />
             {errors.email && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-xs md:text-sm pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-sm md:text-sm pointer-events-none font-sans">
                 {errors.email.message}
               </div>
             )}
@@ -124,7 +124,7 @@ function Contact() {
               })}
             />
             {errors.message && (
-              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-xs md:text-sm pointer-events-none font-sans">
+              <div className="z-50 absolute -top-5 p-2 rounded-lg text-red-500 dark:text-red-600 text-sm md:text-sm pointer-events-none font-sans">
                 {errors.message.message}
               </div>
             )}
@@ -180,7 +180,7 @@ function Contact() {
           )}
         </form>
 
-        <div className="flex flex-col md:p-2 lg:w-1/2 gap-2 text-xs md:text-sm lg:text-base">
+        <div className="flex flex-col md:p-2 lg:w-1/2 gap-2 text-sm md:text-sm lg:text-base">
           <h1>
             {lang
               ? 'En busqueda de nuevas oportunidades, retos y colaboraciones. Si tenés algún proyecto en mente o una oferta de trabajo, enviame un correo.'

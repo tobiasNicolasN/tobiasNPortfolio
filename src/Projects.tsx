@@ -52,7 +52,7 @@ function Projects({ projects }: IProjectsProps) {
                 <Link
                   href={data.site}
                   target="_blank"
-                  className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 hover:bg-offset-button-light dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-xs md:text-sm lg:text-base xl:text-lg"
+                  className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 hover:bg-offset-button-light dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-sm lg:text-base xl:text-lg"
                 >
                   {lang ? 'Visitar Sitio' : 'Visit Site'}
                 </Link>
@@ -63,7 +63,7 @@ function Projects({ projects }: IProjectsProps) {
                 <Link
                   href={data.code}
                   target="_blank"
-                  className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 hover:bg-offset-button-light dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-xs md:text-sm lg:text-base xl:text-lg"
+                  className="flex bg-button-light dark:bg-button text-gray-800 dark:text-gray-200 hover:bg-offset-button-light dark:hover:bg-offset-button hover:cursor-pointer ring-second-light dark:ring-second hover:ring-2 p-2 px-4 rounded-lg duration-300 justify-center items-center text-sm md:text-sm lg:text-base xl:text-lg"
                 >
                   {lang ? 'Ver Código' : 'View Code'}
                 </Link>
